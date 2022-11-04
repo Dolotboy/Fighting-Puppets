@@ -226,6 +226,7 @@ public class PlayerMovementController : NetworkBehaviour
 
         //Perform the rotations
         playerCam.transform.localRotation = Quaternion.Euler(xRotation, desiredX, 0);
+        orientation.transform.localRotation = Quaternion.Euler(0 , desiredX, 0);
     }
     
     private void CounterMovement(float x, float y, Vector2 mag)
