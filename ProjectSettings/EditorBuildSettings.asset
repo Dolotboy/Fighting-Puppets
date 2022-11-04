@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScene.unity
     guid: 2cf88ab88b42db54387078e97358529c
+  - enabled: 1
+    path: Assets/Steam Inventory & Lobby/Scenes/Scene_Lobby.unity
+    guid: cbc4ac99fbaf8304eb0a53a3b8eae8b7
+  - enabled: 1
+    path: Assets/Steam Inventory & Lobby/Scenes/Scene_Steamworks.unity
+    guid: 44ff7603fc6d9304dbc70816512e3940
   m_configObjects: {}
