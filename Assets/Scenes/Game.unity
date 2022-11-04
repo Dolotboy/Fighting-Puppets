@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 255822186}
   - component: {fileID: 255822185}
   - component: {fileID: 255822184}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1276664332}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ====/Environment/====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
