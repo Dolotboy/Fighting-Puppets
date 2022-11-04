@@ -53,7 +53,7 @@ public class LobbyController : MonoBehaviour
 
     public void UpdatePlayerList()
     {
-        if (!PlayerItemCreated) { CreateHostPlayerItem();}
+        if (!PlayerItemCreated) { CreateHostPlayerItem();} // Host
         if(PlayerListItems.Count < Manager.GamePlayers.Count) { CreateClientPlayerItem();}
         if(PlayerListItems.Count > Manager.GamePlayers.Count) { RemovePlayerItem();}
         if(PlayerListItems.Count == Manager.GamePlayers.Count) { UpdatePlayerItem();}
@@ -73,7 +73,7 @@ public class LobbyController : MonoBehaviour
             PlayerListItem NewPlayerItemScript = NewPlayerItem.GetComponent<PlayerListItem>();
 
             NewPlayerItemScript.PlayerName = player.PlayerName;
-            NewPlayerItemScript.ConnectionID = player.ConnctionID;
+            NewPlayerItemScript.ConnectionID = player.ConnectionID;
             NewPlayerItemScript.PlayerSteamID = player.PlayerSteamID;
             NewPlayerItemScript.SetPlayerValues();
             
@@ -90,13 +90,13 @@ public class LobbyController : MonoBehaviour
     {
         foreach (PlayerObjectController player in Manager.GamePlayers)
         {
-            if (!PlayerListItems.Any(b => b.ConnectionID == player.ConnctionID))
+            if (!PlayerListItems.Any(b => b.ConnectionID == player.ConnectionID))
             {
                 GameObject NewPlayerItem = Instantiate(PlayerListItemPrefab) as GameObject;
                 PlayerListItem NewPlayerItemScript = NewPlayerItem.GetComponent<PlayerListItem>();
 
                 NewPlayerItemScript.PlayerName = player.PlayerName;
-                NewPlayerItemScript.ConnectionID = player.ConnctionID;
+                NewPlayerItemScript.ConnectionID = player.ConnectionID;
                 NewPlayerItemScript.PlayerSteamID = player.PlayerSteamID;
                 NewPlayerItemScript.SetPlayerValues();
             
@@ -114,7 +114,7 @@ public class LobbyController : MonoBehaviour
         {
             foreach (PlayerListItem PlayerListItemScript in PlayerListItems)
             {
-                if (PlayerListItemScript.ConnectionID == player.ConnctionID)
+                if (PlayerListItemScript.ConnectionID == player.ConnectionID)
                 {
                     PlayerListItemScript.PlayerName = player.PlayerName;
                     PlayerListItemScript.SetPlayerValues();
@@ -129,7 +129,7 @@ public class LobbyController : MonoBehaviour
 
         foreach (PlayerListItem playerListItem in PlayerListItems)
         {
-            if (!Manager.GamePlayers.Any(b => b.ConnctionID == playerListItem.ConnectionID))
+            if (!Manager.GamePlayers.Any(b => b.ConnectionID == playerListItem.ConnectionID))
             {
                 playerListItemToRemove.Add(playerListItem);
             }

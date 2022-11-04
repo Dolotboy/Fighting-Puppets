@@ -61,11 +61,11 @@ public class PlayerListItem : MonoBehaviour
 
     private void OnImageLoaded(AvatarImageLoaded_t callback)
     {
-        if (callback.m_steamID.m_SteamID == PlayerSteamID)
+        if (callback.m_steamID.m_SteamID == PlayerSteamID)//us
         {
             PlayerIcon.texture = GetSteamImageAsTexture(callback.m_iImage);
         }
-        else
+        else//other player
         {
             return;
         }

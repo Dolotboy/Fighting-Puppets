@@ -6,7 +6,7 @@ using Steamworks;
 
 public class PlayerObjectController : NetworkBehaviour
 {
-   [SyncVar] public int ConnctionID;
+   [SyncVar] public int ConnectionID;
    [SyncVar] public int PlayerIdNumber;
    [SyncVar] public ulong PlayerSteamID;
    [SyncVar(hook = nameof(PlayerNameUpdate))] public string PlayerName;
