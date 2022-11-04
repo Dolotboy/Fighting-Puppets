@@ -32,6 +32,8 @@ namespace BrettArnett
                 return game = MyNetworkManager.singleton as MyNetworkManager;
             }
         }
+        
+        
 
         public override void OnStartAuthority()
         {
@@ -102,6 +104,21 @@ namespace BrettArnett
             Game.GamePlayers.Remove(this);
             Debug.Log("Removed player from the GamePlayer list: " + this.playerName);
             LobbyManager.instance.UpdateUI();
+        }
+
+
+        public void CanStartGame(string SceneName)
+        {
+            if (hasAuthority)
+            {
+                CmdCanStartGame(SceneName);
+            }
+        }
+        
+        [Command]
+        public void CmdCanStartGame(string SceneName)
+        {
+            Game.StartGame(SceneName);
         }
     }
 }

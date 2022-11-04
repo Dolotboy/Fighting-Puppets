@@ -180,5 +180,10 @@ namespace BrettArnett
         {
             localGamePlayerScript.QuitLobby();
         }
+
+        public void StartGame(string SceneName)
+        {
+            localGamePlayerScript.CanStartGame(SceneName);
+        }
     }
 }

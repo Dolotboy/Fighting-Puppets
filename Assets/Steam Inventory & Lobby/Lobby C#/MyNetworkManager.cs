@@ -68,5 +68,10 @@ namespace BrettArnett
 
             Start();
         }
+
+        public void StartGame(string SceneName)
+        {
+            ServerChangeScene(SceneName);
+        }
     }
 }
