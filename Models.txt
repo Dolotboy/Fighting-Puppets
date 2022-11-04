@@ -4,3 +4,5 @@ Sword	     : https://sketchfab.com/3d-models/sword-fbx-7ca498e43d364596824f265e2
 Wand	     : https://sketchfab.com/3d-models/the-elder-wand-efc7362a857749b3ae55fcbbba8baafb
 Gravity Gun  : https://sketchfab.com/3d-models/3december-2021-day-14-imaginary-gadget-32d7ed8ff24a47329e5499f060d7a3c4
 Shield	     : https://sketchfab.com/3d-models/shield-b041673510a549fb83627b5689989f06
+Propeller Hat: https://poly.pizza/m/0vAOG_PcdNb
+Pirate Hat   : https://poly.pizza/m/9QEds6cYAy6
