@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,6 +27,11 @@ public class PlayerObjectController : NetworkBehaviour
       }
    }
 
+   private void Start()
+   {
+      DontDestroyOnLoad(this.gameObject);
+   }
+
    public override void OnStartAuthority()
    {
       Debug.Log("OnStartAuthority");
@@ -37,7 +43,7 @@ public class PlayerObjectController : NetworkBehaviour
 
    public override void OnStartClient()
    {
-      Debug.Log("OnStartAuthority");
+      Debug.Log("OnStartClient");
       Manager.GamePlayers.Add(this);
       LobbyController.Instance.UpdateLobbyName();
       LobbyController.Instance.UpdatePlayerList();
@@ -66,5 +72,19 @@ public class PlayerObjectController : NetworkBehaviour
       {
          LobbyController.Instance.UpdatePlayerList();
       }
+   }
+
+   public void CanStartGame(string SceneName)
+   {
+      if (hasAuthority)
+      {
+         CmdCanStartGame(SceneName);
+      }
+   }
+   
+   [Command]
+   public void CmdCanStartGame(string SceneName)
+   {
+      manager.StartGame(SceneName);
    }
 }

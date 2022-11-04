@@ -1,21 +1,20 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
-using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 using Steamworks;
 
 public class CustomNetworkManager : NetworkManager
 {
     [SerializeField] private PlayerObjectController GamePlayerPrefab;
-    public List<PlayerObjectController> GamePlayers { get; } = new List<PlayerObjectController>();
+    public List<PlayerObjectController> GamePlayers { get; } = new();
 
     public override void OnServerAddPlayer(NetworkConnectionToClient conn)
     {
+        Debug.Log("Adding Player");
         if (SceneManager.GetActiveScene().name == "LobbyScene")
         {
-            PlayerObjectController GamePlayerInstance = Instantiate(GamePlayerPrefab);
+            var GamePlayerInstance = Instantiate(GamePlayerPrefab);
             GamePlayerInstance.ConnectionID = conn.connectionId;
             GamePlayerInstance.PlayerIdNumber = GamePlayers.Count + 1;
             GamePlayerInstance.PlayerSteamID =
@@ -26,5 +25,10 @@ public class CustomNetworkManager : NetworkManager
         }
         
         
+    }
+
+    public void StartGame(string SceneName)
+    {
+        ServerChangeScene(SceneName);
     }
 }

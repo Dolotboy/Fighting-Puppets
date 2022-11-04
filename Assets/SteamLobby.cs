@@ -73,7 +73,7 @@ public class SteamLobby : MonoBehaviour
         if(NetworkClient.active){ return; }
 
         manager.networkAddress = SteamMatchmaking.GetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAdressKey);
-        
+        Debug.Log("OnLobbyEntered : ");
         manager.StartClient();
     }
 }
