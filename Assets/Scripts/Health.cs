@@ -27,12 +27,36 @@ public class Health : MonoBehaviour
 
     }
 
-    void takeDamage()
+    void takeDamage(double damage)
     {
         if (armorPoint > 0)
         {
-
+            decreaseArmorPoint(damage);
+            if(armorPoint < 0)
+            {
+                healthPoint += armorPoint;
+                armorPoint = 0;
+            }
         }
+        else
+        {
+            decreaseHealthPoint(damage);
+        }
+    }
+
+    void decreaseArmorPoint(double damage)
+    {
+        armorPoint -= damage;
+    }
+
+    void decreaseHealthPoint(double damage)
+    {
+        healthPoint -= damage;
+    }
+
+    void die()
+    {
+        Destroy(gameObject);
     }
 
 }

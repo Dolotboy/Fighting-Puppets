@@ -2096,6 +2096,8 @@ MonoBehaviour:
   sceneNames:
   - MainMenu
   - Credits
+  - Scene_Steamworks
+  - Scene_Lobby
   instanceName: MainThemeMusic
 --- !u!4 &1046141438
 Transform:
