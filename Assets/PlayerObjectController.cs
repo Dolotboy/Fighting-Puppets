@@ -6,7 +6,7 @@ using Steamworks;
 
 public class PlayerObjectController : NetworkBehaviour
 {
-   [SyncVar] public int ConnctionID;
+   [SyncVar] public int ConnectionID;
    [SyncVar] public int PlayerIdNumber;
    [SyncVar] public ulong PlayerSteamID;
    [SyncVar(hook = nameof(PlayerNameUpdate))] public string PlayerName;
@@ -28,6 +28,7 @@ public class PlayerObjectController : NetworkBehaviour
 
    public override void OnStartAuthority()
    {
+      Debug.Log("OnStartAuthority");
       CmdSetPlayerName(SteamFriends.GetPersonaName().ToString());
       gameObject.name = "LocalGamePlayer";
       LobbyController.Instance.FindLocalPlayer();
@@ -36,6 +37,7 @@ public class PlayerObjectController : NetworkBehaviour
 
    public override void OnStartClient()
    {
+      Debug.Log("OnStartAuthority");
       Manager.GamePlayers.Add(this);
       LobbyController.Instance.UpdateLobbyName();
       LobbyController.Instance.UpdatePlayerList();

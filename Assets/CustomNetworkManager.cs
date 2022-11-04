@@ -16,7 +16,7 @@ public class CustomNetworkManager : NetworkManager
         if (SceneManager.GetActiveScene().name == "LobbyScene")
         {
             PlayerObjectController GamePlayerInstance = Instantiate(GamePlayerPrefab);
-            GamePlayerInstance.ConnctionID = conn.connectionId;
+            GamePlayerInstance.ConnectionID = conn.connectionId;
             GamePlayerInstance.PlayerIdNumber = GamePlayers.Count + 1;
             GamePlayerInstance.PlayerSteamID =
                 (ulong)SteamMatchmaking.GetLobbyMemberByIndex((CSteamID)SteamLobby.Instance.CurrentLobbyID,
