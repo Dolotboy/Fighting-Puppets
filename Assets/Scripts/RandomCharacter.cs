@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using static Unity.VisualScripting.Metadata;
 
 public class RandomCharacter : MonoBehaviour
 {
@@ -28,7 +27,7 @@ public class RandomCharacter : MonoBehaviour
 
         if (materials.Count >= 1)
         {
-            rend.sharedMaterial = materials[rnd.Next(0, (materials.Count - 1 ))];
+            rend.sharedMaterial = materials[rnd.Next(0, materials.Count)];
         }
     }
 
