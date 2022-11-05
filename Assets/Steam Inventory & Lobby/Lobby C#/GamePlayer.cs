@@ -74,6 +74,9 @@ namespace BrettArnett
             {
                 LobbyManager.instance.UpdateUI();
             }
+            
+            
+            playerTag.SetText(playerName);
         }
 
         public void QuitLobby()
@@ -122,7 +125,6 @@ namespace BrettArnett
         public void CmdCanStartGame(string SceneName)
         {
             Game.StartGame(SceneName);
-            playerTag.SetText(playerName);
         }
     }
 }
