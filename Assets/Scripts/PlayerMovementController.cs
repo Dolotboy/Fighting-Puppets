@@ -139,7 +139,7 @@ public class PlayerMovementController : NetworkBehaviour
     public void SetPosition()
     {
         var rnd = new Random();
-        transform.position = new Vector3(rnd.Next(-5,5), 1, rnd.Next(-5,5));
+        transform.position = new Vector3(rnd.Next(-5,5), 3, rnd.Next(-5,5));
     }
 
     private void Movement()
