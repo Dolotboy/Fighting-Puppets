@@ -1,5 +1,11 @@
 Gamemodes : COOP & Versus
 
+Lobby:
+- Create a lobby->Host game selector
+- Gamemode selection
+- Map appear (Depending on the gamemode)
+- Next Btn-> Weapon Selection & Game settings
+
 Character personalization:
 - Main Menu option
 - Cosmetic (Steam inventory)
