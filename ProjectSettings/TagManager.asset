@@ -13,6 +13,7 @@ TagManager:
   - Hitbox_RightArm
   - Hitbox_Torso
   - Hitbox_Hips
+  - Weapon
   layers:
   - Default
   - TransparentFX

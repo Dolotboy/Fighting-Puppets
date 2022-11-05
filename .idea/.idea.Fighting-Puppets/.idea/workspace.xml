@@ -8,6 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HitboxScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovementController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -81,7 +82,7 @@
       <workItem from="1667586561374" duration="40000" />
       <workItem from="1667587085067" duration="15173000" />
       <workItem from="1667626224178" duration="574000" />
-      <workItem from="1667661594950" duration="3900000" />
+      <workItem from="1667661594950" duration="8500000" />
     </task>
     <servers />
   </component>

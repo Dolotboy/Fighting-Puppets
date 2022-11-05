@@ -59,4 +59,47 @@ public class Health : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void TakeHit(string tag)
+    {
+        switch (tag)
+        {
+            case "Hitbox_Head":
+            {
+                Debug.Log("Hit in Head");
+            } break;
+            case "Hitbox_Torso":
+            {
+                Debug.Log("Hit in Torso");
+            } break;
+            case "Hitbox_Hips":
+            {
+                Debug.Log("Hit in Hips");
+            } break;
+            case "Hitbox_LeftLeg":
+            {
+                Debug.Log("Hit in Left Leg");
+            } break;
+            case "Hitbox_RightLeg":
+            {
+                Debug.Log("Hit in RightLeg");
+            } break;
+            case "Hitbox_LeftArm":
+            {
+                Debug.Log("Hit in Left Arm");
+            } break;
+            case "Hitbox_RightArm":
+            {
+                Debug.Log("Hit in Right Arm");
+            } break;
+            case "Hitbox_LeftForeArm":
+            {
+                Debug.Log("Hit in Left Forearm");
+            } break;
+            case "Hitbox_RightForeArm":
+            {
+                Debug.Log("Hit in Right Forearm");
+            } break;
+        }
+    }
+
 }
