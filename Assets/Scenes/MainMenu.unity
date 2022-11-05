@@ -1430,7 +1430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078493dd711a77745b6e7d8e0e0158ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 0
   character: {fileID: 24957634}
 --- !u!1 &142048207
 GameObject:
@@ -1859,7 +1859,7 @@ GameObject:
   - component: {fileID: 270176747}
   - component: {fileID: 270176748}
   m_Layer: 0
-  m_Name: rightArrow (1)
+  m_Name: leftArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
