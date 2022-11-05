@@ -20,6 +20,9 @@ namespace BrettArnett
         [SyncVar] public bool IsGameLeader = false;
         [SyncVar] public ulong playerSteamId;
 
+        [Header("Player Tag Text")] [SerializeField]
+        private TMP_Text playerTag;
+
         private MyNetworkManager game;
         private MyNetworkManager Game
         {
@@ -119,6 +122,7 @@ namespace BrettArnett
         public void CmdCanStartGame(string SceneName)
         {
             Game.StartGame(SceneName);
+            playerTag.SetText(playerName);
         }
     }
 }
