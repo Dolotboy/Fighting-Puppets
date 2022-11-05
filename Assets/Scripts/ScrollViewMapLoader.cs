@@ -35,8 +35,6 @@ public class ScrollViewMapLoader : MonoBehaviour
 
     void Start()
     {
-
-        //gamemodeDropdown = GetComponent<Dropdown>();
         //Add listener for when the value of the Dropdown changes, to take action
         gamemodeDropdown.onValueChanged.AddListener(delegate {
             DropdownValueChanged(gamemodeDropdown);
