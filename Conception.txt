@@ -1,0 +1,35 @@
+Gamemodes : COOP & Versus
+
+Character personalization:
+- Main Menu option
+- Cosmetic (Steam inventory)
+- Color (Steam inventory)
+
+Weapons:
+- Gravity Gun
+- Wand
+- Shield
+- Sword
+- Raygun
+- Rock
+
+Map:
+- Arena
+- Mystic Forest
+- City
+- Dungeon
+- Spaceship
+
+
+COOP:
+
+
+
+
+Versus:
+
+- Host weapon selector
+- Host map selector
+- Weapon pickup
+- No weapon at start
+- Free for all
