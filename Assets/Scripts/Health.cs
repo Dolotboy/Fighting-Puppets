@@ -71,7 +71,7 @@ public class Health : NetworkBehaviour
             } break;
             case "Hitbox_RightLeg":
             {
-                Debug.Log("Hit in RightLeg");
+                Debug.Log("Hit in Right Leg");
                 takeDamage(2 * damageModifier);
             } break;
             case "Hitbox_LeftArm":

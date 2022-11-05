@@ -1,0 +1,26 @@
+Hitbox:
+
+Basic config:
+	-Capsule Object
+	-Disabled Mesh Renderer
+	-Capsule Collider [OnTrigger]
+	-Hitbox Script [PlayerObject is the GameObject with the health script]
+	-Tag [Hitbox_...]
+
+Weapon:
+	Empty:
+		-GameObject:
+			-Collider [OnTrigger] {Disabled}
+			-Weapon Script
+			-Tag [Weapon]
+		-Config visuals in Steam Inventory.../Prefabs/GamePlayer 
+			WeaponHolder:[Player_TPose.../Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand]
+
+
+Function: 
+	When enabled weapon hits hitbox, sends the hitbox tag/damageModifier to Health.TakeHit
+	TakeHit Checks the tag and adds the basic damage to damageModifier then calls takeDamage()
+
+
+Animation:
+	
