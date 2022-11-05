@@ -505,7 +505,6 @@ MonoBehaviour:
   Speed: 0.1
   PlayerModel: {fileID: 2533326750345460138}
   playerCam: {fileID: 2923888488299561270}
-  orientation: {fileID: 5710253130047707668}
   moveSpeed: 1500
   maxSpeed: 5
   grounded: 0
@@ -544,7 +543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncMode: 0
-  syncInterval: 0.1
+  syncInterval: 0.01
   clientAuthority: 1
   localPositionSensitivity: 0.01
   localRotationSensitivity: 0.01
@@ -598,7 +597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncMode: 0
-  syncInterval: 0.1
+  syncInterval: 0.01
   target: {fileID: 3188384052249760012}
   clientAuthority: 1
   syncVelocity: 1
@@ -620,7 +619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncMode: 0
-  syncInterval: 0.1
+  syncInterval: 0.01
   clientAuthority: 1
   animator: {fileID: 1860987588834633023}
 --- !u!114 &295820657563298134
@@ -636,7 +635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncMode: 0
-  syncInterval: 0.1
+  syncInterval: 0.01
   clientAuthority: 1
   localPositionSensitivity: 0.01
   localRotationSensitivity: 0.01
