@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 
-public class AnimationStateController : MonoBehaviour
+public class AnimationStateController : NetworkBehaviour
 {
-    private Animator anim;
+    [SerializeField]private Animator anim;
 
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
     private static readonly int IsPunching = Animator.StringToHash("isPunching");
@@ -13,12 +13,13 @@ public class AnimationStateController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!hasAuthority) { return;}
         CheckInputs();
     }
 

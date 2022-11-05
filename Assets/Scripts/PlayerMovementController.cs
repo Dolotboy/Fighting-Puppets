@@ -15,7 +15,7 @@ public class PlayerMovementController : NetworkBehaviour
     public GameObject PlayerModel;
     
     public Transform playerCam;
-    public Transform orientation;
+    //public Transform orientation;
 
     //Other
     private Rigidbody rb;
@@ -126,7 +126,7 @@ public class PlayerMovementController : NetworkBehaviour
         {
             if (grounded)
             {
-                rb.AddForce(orientation.transform.forward * slideForce);
+                rb.AddForce(transform.forward * slideForce);
             }
         }
     }
@@ -188,8 +188,8 @@ public class PlayerMovementController : NetworkBehaviour
 
         
         //Apply forces to move player
-        rb.AddForce(orientation.transform.forward * y * moveSpeed * Time.deltaTime * multiplier * multiplierV);
-        rb.AddForce(orientation.transform.right * x * moveSpeed * Time.deltaTime * multiplier);
+        rb.AddForce(transform.forward * y * moveSpeed * Time.deltaTime * multiplier * multiplierV);
+        rb.AddForce(transform.right * x * moveSpeed * Time.deltaTime * multiplier);
     }
     
     private void Jump()
@@ -225,7 +225,7 @@ public class PlayerMovementController : NetworkBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
 
         //Find current look rotation
-        Vector3 rot = playerCam.transform.localRotation.eulerAngles;
+        Vector3 rot = transform.localRotation.eulerAngles;
         desiredX = rot.y + mouseX;
 
         //Rotate, and also make sure we dont over- or under-rotate.
@@ -233,8 +233,8 @@ public class PlayerMovementController : NetworkBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         //Perform the rotations
-        playerCam.transform.localRotation = Quaternion.Euler(xRotation, desiredX, 0);
-        orientation.transform.localRotation = Quaternion.Euler(0 , desiredX, 0);
+        playerCam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+        transform.localRotation = Quaternion.Euler(0 , desiredX, 0);
     }
     
     private void CounterMovement(float x, float y, Vector2 mag)
@@ -251,11 +251,11 @@ public class PlayerMovementController : NetworkBehaviour
         //Counter movement
         if (System.Math.Abs(mag.x) > threshold && System.Math.Abs(x) < 0.05f || (mag.x < -threshold && x > 0) || (mag.x > threshold && x < 0))
         {
-            rb.AddForce(moveSpeed * orientation.transform.right * Time.deltaTime * -mag.x * counterMovement);
+            rb.AddForce(moveSpeed * transform.right * Time.deltaTime * -mag.x * counterMovement);
         }
         if (System.Math.Abs(mag.y) > threshold && System.Math.Abs(y) < 0.05f || (mag.y < -threshold && y > 0) || (mag.y > threshold && y < 0))
         {
-            rb.AddForce(moveSpeed * orientation.transform.forward * Time.deltaTime * -mag.y * counterMovement);
+            rb.AddForce(moveSpeed * transform.forward * Time.deltaTime * -mag.y * counterMovement);
         }
 
         //Limit diagonal running. This will also cause a full stop if sliding fast and un-crouching, so not optimal.
@@ -274,7 +274,7 @@ public class PlayerMovementController : NetworkBehaviour
     /// <returns></returns>
     public Vector2 FindVelRelativeToLook()
     {
-        float lookAngle = orientation.transform.eulerAngles.y;
+        float lookAngle = transform.eulerAngles.y;
         float moveAngle = Mathf.Atan2(rb.velocity.x, rb.velocity.z) * Mathf.Rad2Deg;
 
         float u = Mathf.DeltaAngle(lookAngle, moveAngle);
