@@ -9,6 +9,7 @@ public class AnimationStateController : NetworkBehaviour
 
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
     private static readonly int IsPunching = Animator.StringToHash("isPunching");
+    private static readonly int IsTwerking = Animator.StringToHash("isTwerking");
 
     // Start is called before the first frame update
     void Start()
@@ -25,10 +26,13 @@ public class AnimationStateController : NetworkBehaviour
 
     private void CheckInputs()
     {
+        
+        CheckEmotes();
         //Walking Animations
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
         bool hit = Input.GetMouseButton(0);
+        
         bool isWalking = anim.GetBool(IsWalking);
         
         if (!isWalking && (y != 0 || x != 0)) {anim.SetBool(IsWalking,true);}
@@ -36,6 +40,16 @@ public class AnimationStateController : NetworkBehaviour
         
         if(hit){anim.SetBool(IsPunching,true);}
         else{anim.SetBool(IsPunching,false);}
+
+
+    }
+
+    private void CheckEmotes()
+    {
+        bool emote9 = Input.GetKey("9");
+        bool isTwerking = anim.GetBool(IsTwerking);
         
-    } 
+        if (!isTwerking && emote9) {anim.SetBool(IsTwerking,true);}
+        if (isTwerking) {anim.SetBool(IsTwerking,false);}
+    }
 }

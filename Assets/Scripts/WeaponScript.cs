@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class WeaponScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private double damageModifier;
 
-    // Update is called once per frame
-    void Update()
+    public double GetDamageModifier()
     {
-        
+        return damageModifier;
     }
 }

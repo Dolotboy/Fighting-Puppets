@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 717236984}
   - component: {fileID: 717236983}
   - component: {fileID: 717236982}
+  - component: {fileID: 717236985}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Weapon
@@ -220,6 +221,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717236980}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &717236985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717236980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e239ca86d7a604f4cbfe0b910cb7c4dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageModifier: 1
 --- !u!1 &1228232686
 GameObject:
   m_ObjectHideFlags: 0
