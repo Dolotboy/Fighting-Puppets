@@ -10,7 +10,7 @@ public class CharacterRotator : MonoBehaviour
 
     public GameObject character;
 
-    private float rotation = 1;
+    private float rotation = 0.1F;
 
     public void RotateLeft()
     {
