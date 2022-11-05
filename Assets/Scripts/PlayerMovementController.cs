@@ -8,6 +8,9 @@ using Random = System.Random;
 
 public class PlayerMovementController : NetworkBehaviour
 {
+    //Animator
+    public Animator anim;
+    
     public float Speed = 0.1f;
     public GameObject PlayerModel;
     
@@ -101,6 +104,7 @@ public class PlayerMovementController : NetworkBehaviour
         y = Input.GetAxisRaw("Vertical");
         jumping = Input.GetButton("Jump");
         crouching = Input.GetKey(KeyCode.LeftControl);
+        
 
         //Crouching
         if (Input.GetKeyDown(KeyCode.LeftControl))
@@ -179,6 +183,7 @@ public class PlayerMovementController : NetworkBehaviour
         // Movement while sliding
         if (grounded && crouching) multiplierV = 0f;
 
+        
         //Apply forces to move player
         rb.AddForce(orientation.transform.forward * y * moveSpeed * Time.deltaTime * multiplier * multiplierV);
         rb.AddForce(orientation.transform.right * x * moveSpeed * Time.deltaTime * multiplier);

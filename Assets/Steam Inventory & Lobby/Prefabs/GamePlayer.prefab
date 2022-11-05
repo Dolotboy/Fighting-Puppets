@@ -225,7 +225,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5572389551921505593}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.646, z: 0.159}
+  m_LocalPosition: {x: 0, y: -0.06, z: 0.159}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -250,7 +250,6 @@ GameObject:
   - component: {fileID: 3497981361165422550}
   - component: {fileID: 6675213702106470756}
   - component: {fileID: 3188384052249760012}
-  - component: {fileID: 3561233842692125551}
   m_Layer: 0
   m_Name: GamePlayer
   m_TagString: Untagged
@@ -326,12 +325,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  anim: {fileID: 1860987588834633023}
   Speed: 0.1
   PlayerModel: {fileID: 2533326750345460138}
   playerCam: {fileID: 2923888488299561270}
   orientation: {fileID: 5710253130047707668}
-  moveSpeed: 4500
-  maxSpeed: 20
+  moveSpeed: 3000
+  maxSpeed: 10
   grounded: 0
   whatIsGround:
     serializedVersion: 2
@@ -352,9 +352,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 1.4304616
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.28476918, z: 0}
 --- !u!114 &7071969330858254551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,26 +431,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!95 &3561233842692125551
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6141406830019278485}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 42c13ff08b5956a4ea7a74177e3585f8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6469739633227659016
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +488,7 @@ PrefabInstance:
     - target: {fileID: 6519616228614081872, guid: 12fb86fcdb0b0664ead970032b63f711,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.06
+      value: -1.554
       objectReference: {fileID: 0}
     - target: {fileID: 6519616228614081872, guid: 12fb86fcdb0b0664ead970032b63f711,
         type: 3}
@@ -552,6 +532,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fb86fcdb0b0664ead970032b63f711, type: 3}
+--- !u!1 &6923552435021582650 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5850603378896951274, guid: 12fb86fcdb0b0664ead970032b63f711,
+    type: 3}
+  m_PrefabInstance: {fileID: 3541204279314007760}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1860987588834633023
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6923552435021582650}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 1a2c2fa878511fc41b8e97ae99b438e0, type: 3}
+  m_Controller: {fileID: 9100000, guid: 42c13ff08b5956a4ea7a74177e3585f8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5935709704655072593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6923552435021582650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee08a5d3a8926a2409b7259f9f8f0c97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7736822340166667136 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6519616228614081872, guid: 12fb86fcdb0b0664ead970032b63f711,
