@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Hitbox_LeftLeg
+  - Hitbox_RightLeg
+  - Hitbox_Head
+  - Hitbox_LeftForeArm
+  - Hitbox_RightForeArm
+  - Hitbox_LeftArm
+  - Hitbox_RightArm
+  - Hitbox_Torso
+  - Hitbox_Hips
   layers:
   - Default
   - TransparentFX
