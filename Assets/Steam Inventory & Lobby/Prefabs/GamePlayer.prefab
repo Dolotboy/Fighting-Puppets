@@ -225,7 +225,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5572389551921505593}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.06, z: 0.159}
+  m_LocalPosition: {x: 0, y: -0.341, z: 0.123}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -330,17 +330,17 @@ MonoBehaviour:
   PlayerModel: {fileID: 2533326750345460138}
   playerCam: {fileID: 2923888488299561270}
   orientation: {fileID: 5710253130047707668}
-  moveSpeed: 3000
-  maxSpeed: 10
+  moveSpeed: 1500
+  maxSpeed: 5
   grounded: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
   counterMovement: 0.175
   maxSlopeAngle: 35
-  slideForce: 400
+  slideForce: 800
   slideCounterMovement: 0.2
-  jumpForce: 550
+  jumpForce: 150
 --- !u!136 &5114707418656037553
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -351,10 +351,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.4304616
+  m_Radius: 0.2833733
+  m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: -0.28476918, z: 0}
+  m_Center: {x: 0.003502369, y: -0.5, z: 0.058366656}
 --- !u!114 &7071969330858254551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,7 +488,7 @@ PrefabInstance:
     - target: {fileID: 6519616228614081872, guid: 12fb86fcdb0b0664ead970032b63f711,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.554
+      value: -1.679
       objectReference: {fileID: 0}
     - target: {fileID: 6519616228614081872, guid: 12fb86fcdb0b0664ead970032b63f711,
         type: 3}

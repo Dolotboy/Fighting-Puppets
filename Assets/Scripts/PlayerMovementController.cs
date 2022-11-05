@@ -108,15 +108,20 @@ public class PlayerMovementController : NetworkBehaviour
 
         //Crouching
         if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
             StartCrouch();
+            anim.SetBool(IsRolling,true);
+        }
+
         if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
             StopCrouch();
+            anim.SetBool(IsRolling,false);
+        }
     }
 
     private void StartCrouch()
     {
-        transform.localScale = crouchScale;
-        transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
         if (rb.velocity.magnitude > 0.5f)
         {
             if (grounded)
@@ -129,8 +134,6 @@ public class PlayerMovementController : NetworkBehaviour
     
     private void StopCrouch()
     {
-        transform.localScale = playerScale;
-        transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
     }
     
     public void SetPosition()
@@ -291,6 +294,7 @@ public class PlayerMovementController : NetworkBehaviour
     }
 
     private bool cancellingGrounded;
+    private static readonly int IsRolling = Animator.StringToHash("isRolling");
 
     /// <summary>
     /// Handle ground detection
