@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Mirror;
 using UnityEngine;
 
 public class AnimationStateController : MonoBehaviour
@@ -34,5 +35,6 @@ public class AnimationStateController : MonoBehaviour
         
         if(hit){anim.SetBool(IsPunching,true);}
         else{anim.SetBool(IsPunching,false);}
+        
     } 
 }
