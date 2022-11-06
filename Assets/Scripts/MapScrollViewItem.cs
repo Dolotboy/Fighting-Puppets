@@ -46,6 +46,7 @@ public class MapScrollViewItem : MonoBehaviour, IPointerClickHandler
         }
         Debug.Log(mapName + " selected, loading the scene: " + mapScene);
         SteamLobby.instance.selectedMap = mapScene;
+        SteamLobby.instance.selectedMapName = mapName;
         childText.GetComponent<TextMeshProUGUI>().color = Color.red;
         parentObject.GetComponent<ScrollViewMapLoader>().previouslyClickedItem = childText;
 

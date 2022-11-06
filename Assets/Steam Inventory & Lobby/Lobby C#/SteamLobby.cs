@@ -29,6 +29,7 @@ namespace BrettArnett
         private NetworkManager networkManager;
 
         public string gamemode;
+        public string selectedMapName;
         public string selectedMap;
 
         struct LobbyMetaData

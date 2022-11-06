@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace BrettArnett
@@ -33,6 +34,8 @@ namespace BrettArnett
             CanvasB.SetActive(false);
             CanvasD.SetActive(false);
             CanvasC.SetActive(true);
+            GameObject.Find("SelectedGamemode_Txt").GetComponent<TextMeshProUGUI>().text = SteamLobby.instance.gamemode;
+            GameObject.Find("SelectedMap_Txt").GetComponent<TextMeshProUGUI>().text = SteamLobby.instance.selectedMapName;
         }
 
         public void ToLobbyList()
