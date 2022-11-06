@@ -12,18 +12,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Credits.unity
     guid: 8e52b6650d97e5446afc49e49019c70f
   - enabled: 1
-    path: Assets/Scenes/TestScene.unity
-    guid: 2cf88ab88b42db54387078e97358529c
-  - enabled: 1
     path: Assets/Steam Inventory & Lobby/Scenes/Scene_Lobby.unity
     guid: cbc4ac99fbaf8304eb0a53a3b8eae8b7
   - enabled: 1
     path: Assets/Steam Inventory & Lobby/Scenes/Scene_Steamworks.unity
     guid: 44ff7603fc6d9304dbc70816512e3940
   - enabled: 1
-    path: Assets/Scenes/Game.unity
-    guid: 74467d8e2b3ca3e4e9f45adb2c55138e
-  - enabled: 1
     path: Assets/Scenes/Versus/VersusSpaceShip.unity
     guid: 33ba9053610c4384e9c71d66082194d7
+  - enabled: 1
+    path: Assets/Scenes/Versus/VersusArena.unity
+    guid: 5929f8b29f7336e499a66474bcb08aaa
+  - enabled: 1
+    path: Assets/Scenes/Coop/CoopArena.unity
+    guid: b69646cb30760924eb36efa5e501e9c5
+  - enabled: 1
+    path: Assets/Scenes/Coop/CoopMysticForest.unity
+    guid: 6e93f699179672a48a27be62cd5d5fb1
   m_configObjects: {}
