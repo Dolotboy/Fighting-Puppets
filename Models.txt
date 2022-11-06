@@ -16,6 +16,8 @@ Skull mask     : https://poly.pizza/m/YgmRBtFlcF
 Teddy mask     : https://poly.pizza/m/3lZqpjJzKwq
 football mask  : https://poly.pizza/m/8Htf9hrbXkE
 headset hat    : https://poly.pizza/m/a7h9oaV3xzV
+Planet	       : https://poly.pizza/m/6dOb2Q_w_pM
+Crystal        : https://sketchfab.com/3d-models/glowing-crystals-1c2e277c8c6b4c379ae55099c3122db1
 
 Market Stand   : https://poly.pizza/m/hts7l0NZxW
 furniture      : https://quaternius.com/packs/ultimatefurniture.html
