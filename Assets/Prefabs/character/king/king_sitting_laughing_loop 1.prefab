@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 6526601938632034472}
   - component: {fileID: 5343827308769355171}
   m_Layer: 0
-  m_Name: king_sitting_laughing_loop
+  m_Name: king_sitting_laughing_loop 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
