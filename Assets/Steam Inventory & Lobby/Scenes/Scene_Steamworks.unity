@@ -343,7 +343,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1672076223}
         m_TargetAssemblyTypeName: BrettArnett.ChangeCanvas, Assembly-CSharp
-        m_MethodName: ToD
+        m_MethodName: ToLobbyList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -830,7 +830,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1672076223}
         m_TargetAssemblyTypeName: BrettArnett.ChangeCanvas, Assembly-CSharp
-        m_MethodName: ToA
+        m_MethodName: ToGameButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4031,7 +4031,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1672076223}
         m_TargetAssemblyTypeName: BrettArnett.ChangeCanvas, Assembly-CSharp
-        m_MethodName: ToB
+        m_MethodName: ToLobbySettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4629,7 +4629,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1672076223}
         m_TargetAssemblyTypeName: BrettArnett.ChangeCanvas, Assembly-CSharp
-        m_MethodName: ToC
+        m_MethodName: ToCreateLobby
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6873,7 +6873,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1672076223}
         m_TargetAssemblyTypeName: BrettArnett.ChangeCanvas, Assembly-CSharp
-        m_MethodName: ToB
+        m_MethodName: ToLobbySettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7629,7 +7629,6 @@ GameObject:
   - component: {fileID: 1531466695}
   - component: {fileID: 1531466694}
   - component: {fileID: 1531466693}
-  - component: {fileID: 1531466696}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -7702,9 +7701,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1531466696}
-        m_TargetAssemblyTypeName: ChangeCanvas, Assembly-CSharp
-        m_MethodName: ToB
+      - m_Target: {fileID: 1672076223}
+        m_TargetAssemblyTypeName: BrettArnett.ChangeCanvas, Assembly-CSharp
+        m_MethodName: ToGameButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7752,22 +7751,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531466691}
   m_CullTransparentMesh: 0
---- !u!114 &1531466696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1531466691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdf89a4c8800af047bb3c2c726c2880d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CanvasA: {fileID: 1776483515}
-  CanvasB: {fileID: 1364848018}
-  CanvasC: {fileID: 0}
-  CanvasD: {fileID: 0}
 --- !u!1 &1623729456
 GameObject:
   m_ObjectHideFlags: 0
