@@ -36,6 +36,8 @@ public class ScrollViewMapLoader : MonoBehaviour
 
     public string selectedMap;
 
+    public GameObject previouslyClickedItem;
+
     void Start()
     {
         //Add listener for when the value of the Dropdown changes, to take action

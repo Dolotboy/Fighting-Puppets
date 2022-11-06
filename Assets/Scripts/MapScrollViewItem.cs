@@ -19,7 +19,7 @@ public class MapScrollViewItem : MonoBehaviour, IPointerClickHandler
 
     void Start()
     {
-        //parentObject = gameObject.transform.parent.gameObject;
+        parentObject = gameObject.transform.parent.gameObject;
     }
     
     public void ChangeImage(Sprite image)
@@ -40,8 +40,14 @@ public class MapScrollViewItem : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (parentObject.GetComponent<ScrollViewMapLoader>().previouslyClickedItem != null)
+        {
+            parentObject.GetComponent<ScrollViewMapLoader>().previouslyClickedItem.GetComponent<TextMeshProUGUI>().color = Color.white;
+        }
         Debug.Log(mapName + " selected, loading the scene: " + mapScene);
-        SteamLobby.instance.selectedMap = mapScene; 
-        //parentObject.GetComponent<ScrollViewMapLoader>().selectedMap = mapScene;
+        SteamLobby.instance.selectedMap = mapScene;
+        childText.GetComponent<TextMeshProUGUI>().color = Color.red;
+        parentObject.GetComponent<ScrollViewMapLoader>().previouslyClickedItem = childText;
+
     }
 }
