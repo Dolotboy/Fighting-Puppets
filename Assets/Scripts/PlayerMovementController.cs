@@ -5,6 +5,7 @@ using UnityEngine;
 using Mirror;
 using UnityEngine.SceneManagement;
 using Random = System.Random;
+using TMPro;
 
 public class PlayerMovementController : NetworkBehaviour
 {
@@ -54,6 +55,8 @@ public class PlayerMovementController : NetworkBehaviour
     private Vector3 normalVector = Vector3.up;
     private Vector3 wallNormalVector;
 
+    private GameObject[] spawnPoints;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -61,14 +64,12 @@ public class PlayerMovementController : NetworkBehaviour
     private void Start()
     {
         PlayerModel.SetActive(false);
-        
     }
 
     private void FixedUpdate()
     { 
-        if (SceneManager.GetActiveScene().name == "Game"|| SceneManager.GetActiveScene().name == "VersusSpaceShip")
+        if (SceneManager.GetActiveScene().name != "Scene_Lobby" && SceneManager.GetActiveScene().name != "Scene_Steamworks")
         {
-            
             if (hasAuthority)
             {
                 Movement();
@@ -79,11 +80,12 @@ public class PlayerMovementController : NetworkBehaviour
     
     private void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Game" || SceneManager.GetActiveScene().name == "VersusSpaceShip")
+        if (SceneManager.GetActiveScene().name != "Scene_Lobby" && SceneManager.GetActiveScene().name != "Scene_Steamworks")
         {
             if (PlayerModel.activeSelf == false)
             {
-                SetPosition();
+                spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
+                SetSpawningPosition(spawnPoints);
                 PlayerModel.SetActive(true);
                 playerScale = transform.localScale;
                 Cursor.lockState = CursorLockMode.Locked;
@@ -134,6 +136,21 @@ public class PlayerMovementController : NetworkBehaviour
     
     private void StopCrouch()
     {
+    }
+
+    public void SetSpawningPosition(GameObject[] spawnPoints)
+    {
+        if (spawnPoints.Length == 0)
+        {
+            SetPosition();
+        }
+        else
+        {
+            var rnd = new Random();
+            int index = rnd.Next(0, spawnPoints.Length);
+
+            transform.position = spawnPoints[index].transform.position;
+        }
     }
     
     public void SetPosition()

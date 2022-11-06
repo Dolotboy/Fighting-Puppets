@@ -14,6 +14,7 @@ TagManager:
   - Hitbox_Torso
   - Hitbox_Hips
   - Weapon
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
