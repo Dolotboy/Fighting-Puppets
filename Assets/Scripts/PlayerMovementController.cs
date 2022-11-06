@@ -66,7 +66,7 @@ public class PlayerMovementController : NetworkBehaviour
 
     private void FixedUpdate()
     { 
-        if (SceneManager.GetActiveScene().name == "Game")
+        if (SceneManager.GetActiveScene().name == "Game"|| SceneManager.GetActiveScene().name == "VersusSpaceShip")
         {
             
             if (hasAuthority)
@@ -79,7 +79,7 @@ public class PlayerMovementController : NetworkBehaviour
     
     private void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Game")
+        if (SceneManager.GetActiveScene().name == "Game" || SceneManager.GetActiveScene().name == "VersusSpaceShip")
         {
             if (PlayerModel.activeSelf == false)
             {
@@ -139,7 +139,7 @@ public class PlayerMovementController : NetworkBehaviour
     public void SetPosition()
     {
         var rnd = new Random();
-        transform.position = new Vector3(rnd.Next(-5,5), 3, rnd.Next(-5,5));
+        transform.position = new Vector3(0.323f, 1.119f,0.306f);
     }
 
     private void Movement()
