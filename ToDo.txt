@@ -1,1 +1,2 @@
 - Fix player can spawn on same spawn point
+- Fix King Material display distance

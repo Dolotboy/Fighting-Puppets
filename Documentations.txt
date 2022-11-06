@@ -3,3 +3,6 @@ It takes SteamLobby.instance.selectedMap as map and this var is set in MapScroll
 
 
 To change the player behaviour on spawn in the map it is in PlayerMovementController.cs -> Update() L.87
+
+
+LobbyGamemode text and LobbyMap text are managed in LobbyManager.cs -> UpdateLobbyName

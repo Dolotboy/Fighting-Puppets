@@ -6,6 +6,7 @@ using Mirror;
 using Steamworks;
 using System.Linq;
 using BrettArnett;
+using TMPro;
 
 namespace BrettArnett
 {
@@ -15,6 +16,8 @@ namespace BrettArnett
 
         [Header("UI Elements")]
         [SerializeField] private Text LobbyNameText;
+        [SerializeField] private Text LobbyGamemode;
+        [SerializeField] private Text LobbyMap;
         [SerializeField] private GameObject ContentPanel;
         [SerializeField] private GameObject PlayerListItemPrefab;
 
@@ -63,6 +66,9 @@ namespace BrettArnett
             string lobbyName = SteamMatchmaking.GetLobbyData((CSteamID)currentLobbyId, "name");
             Debug.Log("UpdateLobbyName: new lobby name will be: " + lobbyName);
             LobbyNameText.text = lobbyName;
+
+            LobbyGamemode.text = SteamLobby.instance.gamemode;
+            LobbyMap.text = SteamLobby.instance.selectedMapName;
         }
 
         public void UpdateUI()
