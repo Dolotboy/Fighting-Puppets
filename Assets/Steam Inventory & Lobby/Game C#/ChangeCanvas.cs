@@ -11,7 +11,7 @@ namespace BrettArnett
         public GameObject CanvasC;
         public GameObject CanvasD;
 
-        public void ToA()
+        public void ToGameButtons()
         {
             CanvasB.SetActive(false);
             CanvasC.SetActive(false);
@@ -19,7 +19,7 @@ namespace BrettArnett
             CanvasA.SetActive(true);
         }
 
-        public void ToB()
+        public void ToLobbySettings()
         {
             CanvasA.SetActive(false);
             CanvasC.SetActive(false);
@@ -27,7 +27,7 @@ namespace BrettArnett
             CanvasB.SetActive(true);
         }
 
-        public void ToC()
+        public void ToCreateLobby()
         {
             CanvasA.SetActive(false);
             CanvasB.SetActive(false);
@@ -35,7 +35,7 @@ namespace BrettArnett
             CanvasC.SetActive(true);
         }
 
-        public void ToD()
+        public void ToLobbyList()
         {
             CanvasA.SetActive(false);
             CanvasB.SetActive(false);
