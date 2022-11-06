@@ -781,7 +781,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 542, y: -246}
+  m_AnchoredPosition: {x: -535, y: -246}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &113070345
@@ -4254,6 +4254,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current_lobbyID: 0
   lobbyIDS: []
+  gamemode: 
+  selectedMap: 
 --- !u!1 &831802308
 GameObject:
   m_ObjectHideFlags: 0
@@ -6008,6 +6010,7 @@ MonoBehaviour:
   gamemodeDropdown: {fileID: 1655104687}
   scrollViewContent: {fileID: 1084193820}
   prefab: {fileID: 587428255074758216, guid: e6a8a86ecbdba6b44af4db98df76e9bb, type: 3}
+  selectedMap: 
 --- !u!114 &1084193822
 MonoBehaviour:
   m_ObjectHideFlags: 0

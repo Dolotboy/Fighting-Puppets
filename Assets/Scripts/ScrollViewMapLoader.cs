@@ -1,3 +1,4 @@
+using BrettArnett;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -33,6 +34,8 @@ public class ScrollViewMapLoader : MonoBehaviour
 
     [SerializeField] private GameObject prefab;
 
+    public string selectedMap;
+
     void Start()
     {
         //Add listener for when the value of the Dropdown changes, to take action
@@ -41,7 +44,7 @@ public class ScrollViewMapLoader : MonoBehaviour
         });
 
         coopMaps.Add(new Map("Arena", "CoopArena", Resources.Load<Sprite>("MapImages/Arena"), 1));
-        coopMaps.Add(new Map("Mystic Forest", "MysticForest", Resources.Load<Sprite>("MapImages/MysticForest"), 1));
+        coopMaps.Add(new Map("Mystic Forest", "CoopMysticForest", Resources.Load<Sprite>("MapImages/MysticForest"), 1));
 
 
         versusMaps.Add(new Map("Arena", "VersusArena", Resources.Load<Sprite>("MapImages/Arena"), 3));
@@ -59,8 +62,13 @@ public class ScrollViewMapLoader : MonoBehaviour
             GameObject newMap = Instantiate(prefab, scrollViewContent);
             if(newMap.TryGetComponent<MapScrollViewItem>(out MapScrollViewItem item))
             {
+                if(map.sprite == null)
+                {
+                    map.sprite = Resources.Load<Sprite>("MapImages/MapImageNotFound");
+                }
                 item.ChangeImage(map.sprite);
                 item.ChangeText(map.name);
+                item.ChangeScene(map.scene);
             }
         }
     }
@@ -74,8 +82,13 @@ public class ScrollViewMapLoader : MonoBehaviour
             GameObject newMap = Instantiate(prefab, scrollViewContent);
             if (newMap.TryGetComponent<MapScrollViewItem>(out MapScrollViewItem item))
             {
+                if (map.sprite == null)
+                {
+                    map.sprite = Resources.Load<Sprite>("MapImages/MapImageNotFound");
+                }
                 item.ChangeImage(map.sprite);
                 item.ChangeText(map.name);
+                item.ChangeScene(map.scene);
             }
         }
     }
@@ -84,10 +97,12 @@ public class ScrollViewMapLoader : MonoBehaviour
     {
         if(change.value == 0) // COOP
         {
+            SteamLobby.instance.gamemode = "COOP";
             loadCoopMaps();
         }
         else
         {
+            SteamLobby.instance.gamemode = "Versus";
             loadVersusMaps();
         }
     }

@@ -1,0 +1,2 @@
+To change the starting map after pressing start game in the scene Scene_Lobby - LobbyManager.cs -> StartGame() L.186
+It takes SteamLobby.instance.selectedMap as map and this var is set in MapScrollViewItem.cs in the OnPointerClick

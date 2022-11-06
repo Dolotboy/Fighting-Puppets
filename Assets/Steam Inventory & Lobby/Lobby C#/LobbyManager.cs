@@ -183,7 +183,7 @@ namespace BrettArnett
 
         public void StartGame(string SceneName)
         {
-            localGamePlayerScript.CanStartGame(SceneName);
+            localGamePlayerScript.CanStartGame(SteamLobby.instance.selectedMap);
         }
     }
 }
