@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Mirror;
 
-public class InputManager : MonoBehaviour
+public class InputManager : NetworkBehaviour
 {
     public KeyCode escapeMenuInput = KeyCode.Escape;
 
@@ -19,6 +20,7 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!hasAuthority) { return; }
         if(Input.GetKeyDown(escapeMenuInput) && SceneManager.GetActiveScene().name != "Scene_Lobby" && SceneManager.GetActiveScene().name != "Scene_Steamworks")
         {
             Cursor.visible = !Cursor.visible;

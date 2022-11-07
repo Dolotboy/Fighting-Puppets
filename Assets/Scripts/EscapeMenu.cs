@@ -19,7 +19,6 @@ public class EscapeMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("HJFB WGNVHVF");
         LobbyManager.instance.PlayerQuitLobby();
     }
 }
