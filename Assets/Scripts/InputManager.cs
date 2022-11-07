@@ -61,7 +61,6 @@ public class InputManager : NetworkBehaviour
         CmdEquipWeapon(hit);
     }
 
-    [Server]
     private void CmdEquipWeapon(Transform hit)
     {
         GameObject weapon = Instantiate(hit.transform.GetComponent<DroppedWeaponScript>().GetPrefab(), weaponHolder.transform, true);
