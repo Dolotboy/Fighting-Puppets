@@ -1937,7 +1937,6 @@ GameObject:
   - component: {fileID: 7775028740139918042}
   - component: {fileID: 5205158606750654604}
   - component: {fileID: 4776715278077493534}
-  - component: {fileID: 1705308282158074174}
   m_Layer: 0
   m_Name: GamePlayer
   m_TagString: Untagged
@@ -2019,6 +2018,7 @@ MonoBehaviour:
   anim: {fileID: 1860987588834633023}
   Speed: 0.1
   PlayerModel: {fileID: 2533326750345460138}
+  WeaponHolder: {fileID: 1821104923593200909}
   playerCam: {fileID: 2923888488299561270}
   moveSpeed: 1500
   maxSpeed: 5
@@ -2221,21 +2221,6 @@ MonoBehaviour:
   cam: {fileID: 3446735757053237307}
   escapeMenu: {fileID: 3583971024913191893}
   weaponHolder: {fileID: 1821104923593200909}
---- !u!114 &1705308282158074174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6141406830019278485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18cc2f3138103e04aa4468daea5941da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 3446735757053237307}
-  weaponHolder: {fileID: 1821104923593200909}
-  interactInput: 101
 --- !u!1 &6469739633227659016
 GameObject:
   m_ObjectHideFlags: 0

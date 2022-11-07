@@ -14,6 +14,8 @@ public class PlayerMovementController : NetworkBehaviour
     
     public float Speed = 0.1f;
     public GameObject PlayerModel;
+
+    public GameObject WeaponHolder;
     
     public Transform playerCam;
     //public Transform orientation;
@@ -73,6 +75,7 @@ public class PlayerMovementController : NetworkBehaviour
             if (hasAuthority)
             {
                 Movement();
+                Interact();
             }
         }
     }
@@ -159,6 +162,29 @@ public class PlayerMovementController : NetworkBehaviour
         transform.position = new Vector3(0.323f, 1.119f,0.306f);
     }
 
+    private void Interact()
+    {
+        RaycastHit hit;
+        var camTrasform = playerCam.transform;
+        Ray ray = new Ray(camTrasform.position, camTrasform.forward);
+ 
+        if (Physics.Raycast(ray, out hit)) {
+            if (hit.transform.CompareTag("DroppedWeapon") && Input.GetKeyDown(KeyCode.E))
+            {
+               
+                GameObject weapon = Instantiate(hit.transform.GetComponent<DroppedWeaponScript>().GetPrefab(), WeaponHolder.transform, true);
+
+                weapon.transform.localPosition = new Vector3(0, 0, 0);
+                weapon.transform.localScale = new Vector3(1f, 1f, 1f);
+                weapon.transform.localRotation =
+                    hit.transform.GetComponent<DroppedWeaponScript>().GetPrefab().transform.rotation;
+                
+                Destroy(hit.transform.gameObject);
+                
+            }
+        }
+    }
+    
     private void Movement()
     {
         //Extra gravity
