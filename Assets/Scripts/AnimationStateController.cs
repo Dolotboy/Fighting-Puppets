@@ -58,24 +58,24 @@ public class AnimationStateController : NetworkBehaviour
         if (isTwerking) {anim.SetBool(IsTwerking,false);}
     }
 
-    public void EnableWeapons()
+    public void EnableWeapons(Transform holder)
     {
         if(!hasAuthority) {return;}
         
         if (transform.childCount > 0)
         {
             Debug.Log("Yes");
-            transform.GetComponentInChildren<Transform>().GetComponentInChildren<Collider>().enabled = true;
+            holder.GetComponentInChildren<Transform>().GetComponentInChildren<Collider>().enabled = true;
         }
     }
 
-    public void DisableWeapons()
+    public void DisableWeapons(Transform holder)
     {
         if(!hasAuthority) {return;}
         if (transform.childCount > 0)
         {
             Debug.Log("No");
-            transform.GetComponentInChildren<Transform>().GetComponentInChildren<Collider>().enabled = false;
+            holder.GetComponentInChildren<Transform>().GetComponentInChildren<Collider>().enabled = false;
         }
     }
 }

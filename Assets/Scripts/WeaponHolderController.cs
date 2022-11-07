@@ -9,11 +9,11 @@ public class WeaponHolderController : MonoBehaviour
    [SerializeField] private GameObject GamePlayer;
    private void OnEnable()
    {
-      GamePlayer.GetComponent<AnimationStateController>().EnableWeapons();
+      GamePlayer.GetComponent<AnimationStateController>().EnableWeapons(transform);
    }
 
    private void OnDisable()
    {
-      GamePlayer.GetComponent<AnimationStateController>().DisableWeapons();
+      GamePlayer.GetComponent<AnimationStateController>().DisableWeapons(transform);
    }
 }
