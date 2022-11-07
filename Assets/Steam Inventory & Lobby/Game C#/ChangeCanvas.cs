@@ -12,6 +12,12 @@ namespace BrettArnett
         public GameObject CanvasC;
         public GameObject CanvasD;
 
+        public void OnEnable() // Fix the bug that when host stop client for players, they lose their mouse
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+
         public void ToGameButtons()
         {
             CanvasB.SetActive(false);
