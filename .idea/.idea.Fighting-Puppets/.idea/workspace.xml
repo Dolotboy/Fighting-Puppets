@@ -10,7 +10,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HitboxScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovementController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/WeaponHolderController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WeaponHolderController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -84,7 +84,7 @@
       <workItem from="1667587085067" duration="15173000" />
       <workItem from="1667626224178" duration="574000" />
       <workItem from="1667661594950" duration="15524000" />
-      <workItem from="1667758530742" duration="6387000" />
+      <workItem from="1667758530742" duration="6938000" />
     </task>
     <servers />
   </component>

@@ -5,21 +5,15 @@ using UnityEngine;
 
 public class WeaponHolderController : MonoBehaviour
 {
+
+   [SerializeField] private GameObject GamePlayer;
    private void OnEnable()
    {
-      if (transform.childCount > 0)
-      {
-         Debug.Log("Yes");
-         transform.GetComponentInChildren<Transform>().GetComponentInChildren<Collider>().enabled = true;
-      }
+      GamePlayer.GetComponent<AnimationStateController>().EnableWeapons();
    }
 
    private void OnDisable()
    {
-      if (transform.childCount > 0)
-      {
-         Debug.Log("No");
-         transform.GetComponentInChildren<Transform>().GetComponentInChildren<Collider>().enabled = false;
-      }
+      GamePlayer.GetComponent<AnimationStateController>().DisableWeapons();
    }
 }
