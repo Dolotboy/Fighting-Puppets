@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 4711321798046374050}
   - component: {fileID: 4711321798045244002}
   - component: {fileID: 4586073027246304308}
+  - component: {fileID: 7558824667054827314}
   m_Layer: 0
   m_Name: MetalBattleaxe
   m_TagString: Untagged
@@ -129,3 +130,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.489644, y: 4.203817, z: 0.6679688}
   m_Center: {x: 0.085315116, y: 4.4016094, z: -0.012762281}
+--- !u!114 &7558824667054827314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4711321798047171746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e239ca86d7a604f4cbfe0b910cb7c4dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageModifier: 1
