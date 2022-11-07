@@ -114,6 +114,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MetalBroadsword
       objectReference: {fileID: 0}
+    - target: {fileID: 3003749864775109788, guid: a2f180246baa83447a3fc7d4ffab3ad6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2f180246baa83447a3fc7d4ffab3ad6, type: 3}
 --- !u!4 &467768217065122548 stripped
