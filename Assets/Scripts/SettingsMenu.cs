@@ -72,7 +72,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void ToggleOptionMenu()
     {
-        if(MainMenu.active)
+        if(MainMenu.activeInHierarchy)
         {
             MainMenu.SetActive(false);
             OptionMenu.SetActive(true);

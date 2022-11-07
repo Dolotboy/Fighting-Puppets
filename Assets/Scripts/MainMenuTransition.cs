@@ -10,7 +10,7 @@ public class MainMenuTransition : MonoBehaviour
     public Animator animator;
     public void TransitionToCharacterMenu()
     {
-        if(MainMenu.active)
+        if(MainMenu.activeInHierarchy)
         {
             MainMenu.SetActive(false);
             animator.SetBool("isTransitionning", true);
@@ -19,7 +19,7 @@ public class MainMenuTransition : MonoBehaviour
 
     public void TransitionToMainMenu()
     {
-        if(CharacterMenu.active)
+        if(CharacterMenu.activeInHierarchy)
         {
             CharacterMenu.SetActive(false);
             animator.SetBool("isTransitionning", false);
