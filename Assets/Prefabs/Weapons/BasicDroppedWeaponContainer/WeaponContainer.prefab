@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4297905646749704890}
   - component: {fileID: -4813527861553317650}
   - component: {fileID: 1584891400446468882}
+  - component: {fileID: -6122407956922534048}
   m_Layer: 0
   m_Name: WeaponContainer
   m_TagString: Untagged
@@ -81,3 +82,20 @@ CapsuleCollider:
   m_Height: 2.2664728
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: -0.63323647}
+--- !u!114 &-6122407956922534048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4297905646749704891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  serverOnly: 0
+  visible: 0
+  m_AssetId: a05d697860e0cd846af8974d9b5e44a1
+  hasSpawned: 0

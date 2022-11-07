@@ -48,18 +48,18 @@ public class InputManager : NetworkBehaviour
         if (Physics.Raycast(ray, out hit)) {
             if (hit.transform.CompareTag("DroppedWeapon") && Input.GetKeyDown(interactInput))
             {
-                EquipWeapon(hit);
+                EquipWeapon(hit.transform);
             }
         }
     }
 
-    public void EquipWeapon(RaycastHit hit)
+    public void EquipWeapon(Transform hit)
     {
         CmdEquipWeapon(hit);
     }
 
     [Command]
-    private void CmdEquipWeapon(RaycastHit hit)
+    private void CmdEquipWeapon(Transform hit)
     {
         GameObject weapon = Instantiate(hit.transform.GetComponent<DroppedWeaponScript>().GetPrefab(), weaponHolder.transform, true);
 
