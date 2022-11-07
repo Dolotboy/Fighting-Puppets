@@ -6,3 +6,7 @@ To change the player behaviour on spawn in the map it is in PlayerMovementContro
 
 
 LobbyGamemode text and LobbyMap text are managed in LobbyManager.cs -> UpdateLobbyName
+
+
+Add a new Weapon:
+- Tag Weapon
