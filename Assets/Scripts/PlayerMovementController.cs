@@ -80,8 +80,8 @@ public class PlayerMovementController : NetworkBehaviour
             if (hasAuthority)
             {
                 Movement();
+                Interact();
             }
-            Interact();
         }
     }
 
