@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using BrettArnett;
 using UnityEngine;
 using Mirror;
 using UnityEngine.SceneManagement;
@@ -59,6 +60,9 @@ public class PlayerMovementController : NetworkBehaviour
 
     private GameObject[] spawnPoints;
 
+
+    //private MyNetworkManager networkManager;
+    
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -66,6 +70,7 @@ public class PlayerMovementController : NetworkBehaviour
     private void Start()
     {
         PlayerModel.SetActive(false);
+        //networkManager = GetComponent<MyNetworkManager>();
     }
 
     private void FixedUpdate()
@@ -171,21 +176,28 @@ public class PlayerMovementController : NetworkBehaviour
         if (Physics.Raycast(ray, out hit)) {
             if (hit.transform.CompareTag("DroppedWeapon") && Input.GetKeyDown(KeyCode.E))
             {
-               
-                GameObject weapon = Instantiate(hit.transform.GetComponent<DroppedWeaponScript>().GetPrefab(), WeaponHolder.transform, true);
 
-                weapon.transform.localPosition = new Vector3(0, 0, 0);
-                weapon.transform.localScale = new Vector3(1f, 1f, 1f);
-                weapon.transform.localRotation =
-                    hit.transform.GetComponent<DroppedWeaponScript>().GetPrefab().transform.rotation;
-                
-                NetworkServer.Spawn(weapon);
-                
-                Destroy(hit.transform.gameObject);
-                NetworkServer.Destroy(hit.transform.gameObject);
-                
+                CmdSpawn(hit.transform);
+                //networkManager.Destroy(hit.transform.gameObject);
+
             }
         }
+    }
+    
+    [Command(requiresAuthority = false)]
+    private void CmdSpawn(Transform hit)
+    {
+        GameObject weapon = Instantiate(hit.GetComponent<DroppedWeaponScript>().GetPrefab(), WeaponHolder.transform, true);
+
+        weapon.transform.localPosition = new Vector3(0, 0, 0);
+        weapon.transform.localScale = new Vector3(1f, 1f, 1f);
+        weapon.transform.localRotation =
+            hit.GetComponent<DroppedWeaponScript>().GetPrefab().transform.rotation;
+                
+        NetworkServer.Spawn(weapon);
+
+        Destroy(hit.gameObject);
+        NetworkServer.Destroy(hit.gameObject);
     }
     
     private void Movement()
