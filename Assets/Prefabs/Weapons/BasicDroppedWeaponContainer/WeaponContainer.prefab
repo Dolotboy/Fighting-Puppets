@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4297905646749704889}
   - component: {fileID: 4297905646749704890}
+  - component: {fileID: -4813527861553317650}
+  - component: {fileID: 1584891400446468882}
   m_Layer: 0
   m_Name: WeaponContainer
   m_TagString: Untagged
@@ -52,3 +54,30 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-4813527861553317650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4297905646749704891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f45505739590be149875daccc74143fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+--- !u!136 &1584891400446468882
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4297905646749704891}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.1332363
+  m_Height: 2.2664728
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: -0.63323647}

@@ -2190,7 +2190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  healthPoint: 10
+  healthPoint: 100
   armorPoint: 0
   Head: {fileID: 5847363725449416663}
   Torso: {fileID: 9037433823927287440}
@@ -2216,7 +2216,10 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   escapeMenuInput: 27
+  interactInput: 101
+  cam: {fileID: 3446735757053237307}
   escapeMenu: {fileID: 3583971024913191893}
+  weaponHolder: {fileID: 1821104923593200909}
 --- !u!1 &6469739633227659016
 GameObject:
   m_ObjectHideFlags: 0

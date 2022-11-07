@@ -24,6 +24,11 @@ public class Health : NetworkBehaviour
     
     void takeDamage(double damage)
     {
+        if (healthPoint <= 0)
+        {
+            Debug.Log("Dead");
+        }
+        
         if (armorPoint > 0)
         {
             decreaseArmorPoint(damage);

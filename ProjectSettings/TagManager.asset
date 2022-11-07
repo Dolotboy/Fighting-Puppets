@@ -15,6 +15,7 @@ TagManager:
   - Hitbox_Hips
   - Weapon
   - SpawnPoint
+  - DroppedWeapon
   layers:
   - Default
   - TransparentFX
