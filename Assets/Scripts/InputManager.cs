@@ -31,7 +31,11 @@ public class InputManager : NetworkBehaviour
         if (Physics.Raycast(ray, out hit)) {
             if (hit.transform.CompareTag("DroppedWeapon") && Input.GetKeyDown(interactInput))
             {
-                EquipWeapon(hit.transform);
+                if (isClient)
+                {
+                    if(!hasAuthority) { return; }
+                    EquipWeapon(hit.transform);
+                }
             }
         }
         
