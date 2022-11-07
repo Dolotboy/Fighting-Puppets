@@ -3320,6 +3320,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MetalHalberd
       objectReference: {fileID: 0}
+    - target: {fileID: 3066211648866821275, guid: a6fede73b624c2049abba78472b96764,
+        type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6fede73b624c2049abba78472b96764, type: 3}
 --- !u!1 &5557110300076659115 stripped
