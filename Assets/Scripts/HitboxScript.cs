@@ -11,6 +11,7 @@ public class HitboxScript : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Weapon"))
         {
+            Debug.Log("Test");
             PlayerObject.GetComponent<Health>().TakeHit(gameObject.tag,collider.GetComponent<WeaponScript>().GetDamageModifier());
         }
     }

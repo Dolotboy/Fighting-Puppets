@@ -60,8 +60,6 @@ public class AnimationStateController : NetworkBehaviour
 
     public void EnableWeapons(Transform holder)
     {
-        if(!hasAuthority) {return;}
-        
         if (transform.childCount > 0)
         {
             Debug.Log("Yes");
@@ -71,7 +69,6 @@ public class AnimationStateController : NetworkBehaviour
 
     public void DisableWeapons(Transform holder)
     {
-        if(!hasAuthority) {return;}
         if (transform.childCount > 0)
         {
             Debug.Log("No");
