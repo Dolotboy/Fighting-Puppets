@@ -179,7 +179,10 @@ public class PlayerMovementController : NetworkBehaviour
                 weapon.transform.localRotation =
                     hit.transform.GetComponent<DroppedWeaponScript>().GetPrefab().transform.rotation;
                 
+                NetworkServer.Spawn(weapon);
+                
                 Destroy(hit.transform.gameObject);
+                NetworkServer.Destroy(hit.transform.gameObject);
                 
             }
         }
