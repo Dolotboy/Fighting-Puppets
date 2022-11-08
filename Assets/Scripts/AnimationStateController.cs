@@ -11,6 +11,9 @@ public class AnimationStateController : NetworkBehaviour
     private static readonly int IsPunching = Animator.StringToHash("isPunching");
     private static readonly int IsTwerking = Animator.StringToHash("isTwerking");
     private static readonly int IsSwinging = Animator.StringToHash("isSwinging");
+    private bool grounded = true;
+    private static readonly int IsGrounded = Animator.StringToHash("isGrounded");
+    private static readonly int IsJumping = Animator.StringToHash("isJumping");
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +25,11 @@ public class AnimationStateController : NetworkBehaviour
     void Update()
     {
         if (!hasAuthority) { return;}
+
+        grounded = gameObject.GetComponent<PlayerMovementController>().grounded;
+        if(grounded){anim.SetBool(IsGrounded,true);}
+        else{anim.SetBool(IsGrounded,false);}
+        
         CheckInputs();
     }
 
@@ -34,6 +42,7 @@ public class AnimationStateController : NetworkBehaviour
         float y = Input.GetAxis("Vertical");
         bool hit = Input.GetMouseButton(0);
         bool swing = Input.GetMouseButton(1);
+        bool jump = Input.GetButton("Jump");
         
         bool isWalking = anim.GetBool(IsWalking);
         
@@ -45,7 +54,9 @@ public class AnimationStateController : NetworkBehaviour
         
         if(swing){anim.SetBool(IsSwinging,true);}
         else{anim.SetBool(IsSwinging,false);}
-
+        
+        if(jump){anim.SetBool(IsJumping,true);}
+        else{anim.SetBool(IsJumping,false);}
 
     }
 
