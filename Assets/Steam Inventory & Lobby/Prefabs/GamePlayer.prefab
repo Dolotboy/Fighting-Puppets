@@ -1320,7 +1320,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7362643138554224193
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2274,6 +2274,7 @@ MonoBehaviour:
   syncInterval: 0.1
   healthPoint: 100
   armorPoint: 0
+  hpTxt: {fileID: 1198913679498747907}
   Head: {fileID: 5847363725449416663}
   Torso: {fileID: 9037433823927287440}
   Hips: {fileID: 2847689593165305592}

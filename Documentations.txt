@@ -10,3 +10,8 @@ LobbyGamemode text and LobbyMap text are managed in LobbyManager.cs -> UpdateLob
 
 Add a new Weapon:
 - Tag Weapon
+
+
+
+Add an object in a map that should be the same for every users (Example: weapon)
+We need to use a ClientRpc (https://docs-multiplayer.unity3d.com/netcode/current/advanced-topics/message-system/clientrpc/index.html)
