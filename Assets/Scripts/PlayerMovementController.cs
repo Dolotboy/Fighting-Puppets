@@ -188,12 +188,14 @@ public class PlayerMovementController : NetworkBehaviour
     private void CmdSpawn(Transform hit)
     {
         GameObject weapon = Instantiate(hit.GetComponent<DroppedWeaponScript>().GetPrefab(), WeaponHolder.transform, true);
-
+        NetworkClient.RegisterPrefab(weapon);
+        
+        
         weapon.transform.localPosition = new Vector3(0, 0, 0);
         weapon.transform.localScale = new Vector3(1f, 1f, 1f);
         weapon.transform.localRotation =
             hit.GetComponent<DroppedWeaponScript>().GetPrefab().transform.rotation;
-                
+        
         NetworkServer.Spawn(weapon);
 
         Destroy(hit.gameObject);
