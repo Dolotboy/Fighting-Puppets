@@ -2102,7 +2102,7 @@ MonoBehaviour:
   WeaponHolder: {fileID: 1821104923593200909}
   playerCam: {fileID: 2923888488299561270}
   moveSpeed: 1500
-  maxSpeed: 5
+  maxSpeed: 3
   grounded: 0
   whatIsGround:
     serializedVersion: 2
@@ -2111,7 +2111,7 @@ MonoBehaviour:
   maxSlopeAngle: 35
   slideForce: 800
   slideCounterMovement: 0.2
-  jumpForce: 150
+  jumpForce: 100
 --- !u!136 &5114707418656037553
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3263,13 +3263,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
-    'mixamorig:LeftHandIndex1'\n\tTransform 'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform
-    'mixamorig:RightArm'\n\tTransform 'mixamorig:LeftLeg'\n\tTransform 'mixamorig:LeftShoulder'\n\tTransform
-    'mixamorig:RightHandIndex3'\n\tTransform 'mixamorig:RightFoot'\n\tand more ...\n\tFrom
-    animation clip 'character_twerk_dancing_loop'"
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
