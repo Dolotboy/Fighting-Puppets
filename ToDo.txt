@@ -1,3 +1,5 @@
 - Fix player can spawn on same spawn point
 - Fix King Material display distance
 - Fix Left arrow character custom
+- Fix on deconnect reconnect, player lose ClientRpc prefabs
+- Fix Pickup
