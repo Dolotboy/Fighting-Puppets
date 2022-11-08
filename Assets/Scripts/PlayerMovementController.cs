@@ -187,6 +187,12 @@ public class PlayerMovementController : NetworkBehaviour
     [Command(requiresAuthority = false)]
     private void CmdSpawn(Transform hit)
     {
+        RPCSpawn(hit);
+    }
+
+    [ClientRpc]
+    private void RPCSpawn(Transform hit)
+    {
         GameObject weapon = Instantiate(hit.GetComponent<DroppedWeaponScript>().GetPrefab(), WeaponHolder.transform, true);
         NetworkClient.RegisterPrefab(weapon);
         
