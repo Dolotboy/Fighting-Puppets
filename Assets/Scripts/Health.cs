@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
@@ -11,6 +12,8 @@ public class Health : NetworkBehaviour
 
     [SerializeField] private double armorPoint;
 
+    [SerializeField] private Text hpTxt;
+
     [Header("UI Elements")]
     [SerializeField] private GameObject Head;
     [SerializeField] private GameObject Torso;
@@ -21,7 +24,12 @@ public class Health : NetworkBehaviour
     [SerializeField] private GameObject LeftForeArm;
     [SerializeField] private GameObject RightLeg;
     [SerializeField] private GameObject LeftLeg;
-    
+
+    private void Start()
+    {
+        UpdateHpTxt();
+    }
+
     void takeDamage(double damage)
     {
         if (healthPoint <= 0)
@@ -53,7 +61,13 @@ public class Health : NetworkBehaviour
     void decreaseHealthPoint(double damage)
     {
         healthPoint -= damage;
+        UpdateHpTxt();
         Debug.Log($"Took {damage} Damage to Health");
+    }
+
+    void UpdateHpTxt()
+    {
+        hpTxt.text = Convert.ToString(healthPoint);
     }
 
     void die()
