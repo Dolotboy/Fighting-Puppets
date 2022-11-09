@@ -42,6 +42,7 @@ public class Health : NetworkBehaviour
     [SerializeField] private GameObject LeftForeArm;
     [SerializeField] private GameObject RightLeg;
     [SerializeField] private GameObject LeftLeg;
+    private static readonly int IsHit = Animator.StringToHash("isHit");
 
     private void Start()
     {
@@ -167,6 +168,7 @@ public class Health : NetworkBehaviour
     {
         if(!hasAuthority) { return;}
         
+        gameObject.GetComponent<Animator>().SetBool(IsHit,true);
         switch (tag)
         {
             case "Hitbox_Head":
