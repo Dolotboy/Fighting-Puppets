@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6122407956922534048}
   m_Layer: 0
   m_Name: WeaponContainer
-  m_TagString: Untagged
+  m_TagString: DroppedWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
