@@ -61,6 +61,8 @@ public class PlayerMovementController : NetworkBehaviour
     private GameObject[] spawnPoints;
 
     private bool hasWeaponEquiped;
+    
+    
 
 
     //private MyNetworkManager networkManager;
@@ -203,6 +205,8 @@ public class PlayerMovementController : NetworkBehaviour
         weapon.transform.localScale = new Vector3(1f, 1f, 1f);
         weapon.transform.localRotation =
             hit.GetComponent<DroppedWeaponScript>().GetPrefab().transform.rotation;
+
+        hit.tag = "DroppedWeapon_Empty";
         
         //NetworkServer.Spawn(weapon);
 
@@ -229,9 +233,17 @@ public class PlayerMovementController : NetworkBehaviour
     [ClientRpc]
     private void RPCDrop()
     {
+        GameObject weapon = GameObject.FindWithTag("DroppedWeapon_Empty");
+
+        if (weapon.transform.childCount == 0)
+        {
+            weapon.transform.parent.transform.position = transform.position;
+            weapon.transform.position = transform.localPosition;
+            WeaponHolder.transform.GetChild(0).parent = weapon.transform;
+            hasWeaponEquiped = false;
+            weapon.tag = "DroppedWeapon";
+        }
         
-        
-        hasWeaponEquiped = false;
     }
     
     private void Movement()
