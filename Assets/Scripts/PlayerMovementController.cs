@@ -181,7 +181,7 @@ public class PlayerMovementController : NetworkBehaviour
  
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.transform.CompareTag("DroppedWeapon") && Input.GetKeyDown(KeyCode.E) && !hasWeaponEquiped)
+            if (hit.transform.GetChild(0).CompareTag("DroppedWeapon") && Input.GetKeyDown(KeyCode.E) && !hasWeaponEquiped)
             {
 
                 CmdSpawn(hit.transform);
