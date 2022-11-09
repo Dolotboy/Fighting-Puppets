@@ -5,6 +5,7 @@ using BrettArnett;
 using Mirror;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class Health : NetworkBehaviour
@@ -46,8 +47,7 @@ public class Health : NetworkBehaviour
     {
         healthPoint = startingHealthPoint;
         armorPoint = startingArmorPoint;
-        UpdateHpTxt();
-        UpdateArmorTxt();
+        ResetUI();
     }
 
     private void Update()
@@ -91,6 +91,26 @@ public class Health : NetworkBehaviour
         }
     }
 
+    private void ResetUI()
+    {
+        UpdateHpTxt();
+        UpdateArmorTxt();
+        ResetHitBoxUI();
+    }
+
+    private void ResetHitBoxUI()
+    {
+        Head.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+        Torso.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+        Hips.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+        LeftLeg.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+        RightLeg.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+        LeftArm.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+        RightArm.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+        LeftForeArm.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+        RightForeArm.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+    }
+
     public void IncreaseArmorPoint(double armorPoint)
     {
         this.armorPoint += armorPoint;
@@ -130,6 +150,7 @@ public class Health : NetworkBehaviour
     {
         healthPoint = startingHealthPoint;
         armorPoint = startingArmorPoint;
+        ResetUI();
 
         GameObject[] spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
         gameObject.GetComponent<PlayerMovementController>().CmdDropWeapon();
