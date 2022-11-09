@@ -188,13 +188,15 @@ public class PlayerMovementController : NetworkBehaviour
                 //networkManager.Destroy(hit.transform.gameObject);
 
             }
-            Debug.Log(hit.transform);
-            Debug.Log(hit.transform.childCount);
             if (hit.transform.childCount > 0)
             {
-                if (hit.transform.GetChild(0).CompareTag("DroppedArmor") && Input.GetKeyDown(KeyCode.E))
+                //Debug.Log(hit.transform);
+                //Debug.Log(hit.transform.childCount);
+                //Debug.Log(hit.transform.GetChild(0).gameObject.tag);
+                if (hit.transform.GetChild(0).gameObject.tag == "DroppedArmor" && hit.transform.GetComponent<GoodsSpawner>().haveObjectInIt && Input.GetKeyDown(KeyCode.E))
                 {
-                    gameObject.GetComponent<Health>().ArmorPoint = hit.transform.GetChild(0).GetComponent<Armor>().ArmorPoint;
+                    gameObject.GetComponent<Health>().IncreaseArmorPoint(hit.transform.GetChild(0).GetComponent<Armor>().ArmorPoint);
+                    hit.transform.GetComponent<GoodsSpawner>().TakeObjectInIt();
                 }
             }
         }

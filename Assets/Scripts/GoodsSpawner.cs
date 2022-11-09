@@ -7,6 +7,10 @@ public class GoodsSpawner : MonoBehaviour
 
     [SerializeField] private bool isRandom;
 
+    [SerializeField] private bool isRespawningGoods;
+
+    public bool haveObjectInIt = true;
+
     [SerializeField] private List<GameObject> goodsObjects;
 
     [SerializeField] private int goodsNbrInList;
@@ -31,6 +35,12 @@ public class GoodsSpawner : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void TakeObjectInIt()
+    {
+        haveObjectInIt = false;
+        Destroy(gameObject.transform.GetChild(0).gameObject);
     }
 
     void LoadGoods()

@@ -65,6 +65,12 @@ public class Health : NetworkBehaviour
         }
     }
 
+    public void IncreaseArmorPoint(double armorPoint)
+    {
+        this.armorPoint += armorPoint;
+        UpdateArmorTxt();
+    }
+
     void decreaseArmorPoint(double damage)
     {
         armorPoint -= damage;
