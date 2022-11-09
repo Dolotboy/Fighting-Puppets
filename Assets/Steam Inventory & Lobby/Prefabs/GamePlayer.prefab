@@ -1343,6 +1343,7 @@ RectTransform:
   - {fileID: 2577384163826134336}
   - {fileID: 5753693327705170548}
   - {fileID: 5382942790212961039}
+  - {fileID: 6694538678766128571}
   m_Father: {fileID: 6141406830019278474}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2275,6 +2276,7 @@ MonoBehaviour:
   healthPoint: 100
   armorPoint: 0
   hpTxt: {fileID: 1198913679498747907}
+  armorTxt: {fileID: 6583083576902110055}
   Head: {fileID: 5847363725449416663}
   Torso: {fileID: 9037433823927287440}
   Hips: {fileID: 2847689593165305592}
@@ -2300,6 +2302,12 @@ MonoBehaviour:
   syncInterval: 0.1
   escapeMenuInput: 27
   interactInput: 101
+  forwardInput: 119
+  backwardInput: 115
+  leftInput: 97
+  rightInput: 100
+  dropWeaponInput: 113
+  jumpInput: 32
   cam: {fileID: 3446735757053237307}
   escapeMenu: {fileID: 3583971024913191893}
   weaponHolder: {fileID: 1821104923593200909}
@@ -2672,6 +2680,88 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerObject: {fileID: 6141406830019278485}
+--- !u!1 &8052145428310700978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6694538678766128571}
+  - component: {fileID: 1364020421625998228}
+  - component: {fileID: 6583083576902110055}
+  m_Layer: 0
+  m_Name: Armor_Txt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6694538678766128571
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8052145428310700978}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7362643138554224193}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 340, y: 53.6}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1364020421625998228
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8052145428310700978}
+  m_CullTransparentMesh: 1
+--- !u!114 &6583083576902110055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8052145428310700978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Armor
+
+'
 --- !u!1 &8077677243401014640
 GameObject:
   m_ObjectHideFlags: 0

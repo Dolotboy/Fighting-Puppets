@@ -9,10 +9,22 @@ using UnityEngine.UI;
 public class Health : NetworkBehaviour
 {
     [SerializeField] private double healthPoint;
+    public double HealthPoint
+    {
+        get { return healthPoint; }
+        set { healthPoint = value; }
+    }
 
     [SerializeField] private double armorPoint;
 
+    public double ArmorPoint
+    {
+        get { return armorPoint;  }
+        set { armorPoint = value; }
+    }
+
     [SerializeField] private Text hpTxt;
+    [SerializeField] private Text armorTxt;
 
     [Header("UI Elements")]
     [SerializeField] private GameObject Head;
@@ -28,6 +40,7 @@ public class Health : NetworkBehaviour
     private void Start()
     {
         UpdateHpTxt();
+        UpdateArmorTxt();
     }
 
     void takeDamage(double damage)
@@ -55,6 +68,7 @@ public class Health : NetworkBehaviour
     void decreaseArmorPoint(double damage)
     {
         armorPoint -= damage;
+        UpdateArmorTxt();
         Debug.Log($"Took {damage} Damage to Armor");
     }
 
@@ -68,6 +82,11 @@ public class Health : NetworkBehaviour
     void UpdateHpTxt()
     {
         hpTxt.text = Convert.ToString(healthPoint);
+    }
+
+    void UpdateArmorTxt()
+    {
+        armorTxt.text = Convert.ToString(armorPoint);
     }
 
     void die()
