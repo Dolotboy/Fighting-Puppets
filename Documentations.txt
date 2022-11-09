@@ -17,16 +17,34 @@ Add an object in a map that should be the same for every users (Example: weapon)
 We need to use a ClientRpc (https://docs-multiplayer.unity3d.com/netcode/current/advanced-topics/message-system/clientrpc/index.html)
 
 
-How is working the Weapon and Goods Pickup system:
+How is working the Weapon Pickup System:
 -First, in the PlayerMovementController there is a function that is called in the Update() function which is Interact() which works with a Raycast from the Player Camera
-this raycast is looking for GameObjects with specifics tag has 'Weapons' or 'Goods' or 'Pickable'
+this raycast is looking for GameObjects with specifics tag has 'DroppedWeapon'
 -If the raycast hit a GameObject with the tag 'Weapon', the player doesn't have an equipped weapon and the Player press 'InteractInput' key then it calls a server command
 CmdSpawn() which take the hit informations (Transform) as parameters
 -This command call a ClientRpc function RPCSpawn() which also take the hit informations (Transform) as parameters.
 -The ClientRpc function RPCSpawn takes the WeaponSpawner and put it into the hand of the player
 
 
+How is working the Armor Pickup System:
+-First the GoodsSpawner with a NetworkIdentity Component and a NetworkBehaviour instantiate an armor
+-The Armor GameObject has a Armor script in which the armorPoint of the armor is set via a public double and a tag of 'DroppedArmor'
+-In the PlayerMovementController there is a function that is called in the Update() function which is Interact() which works with a Raycast from the Player Camera
+this raycast is looking for GameObjects with childs, if he find one, he looks if the child's tag is 'DroppedArmor', if the GoodsSpawner have an object in it and if the
+player press 'InteractInput' key
+-Then is calls the function IncreaseArmorPoint() of the script Health on the Player GameObject and it sets the armorPoint of the Player to the armorPoint that the armor
+is carrying in the Armor script
+Then it calls the function TakeObjectInIt() of the script GoodsSpawner on the GoodsSpawner GameObject. This function is a ClientRpc function so the Destroy of the
+child in the GoodsSpawner is effective for everyone in the server
+
+
 How is working the attack and hitbox system:
 -First each weapon have a damage modifier sciprt attached on them which will determine an ammout of time the damage will be multiplied
 -When a part of the player is hit, the script HitBoxScript that the part has call the OnTriggerEnter which call the TakeHit() function from the Health script of the victim
 -The TakeHit() function will take a tag to determine which part of the body has been touch and the damage multiplier of the weapon and it will decrease armor or hp
+
+NetworkIdentity (Component):
+
+NetworkBehaviour:
+
+ClientRpc:

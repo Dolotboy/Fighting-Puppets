@@ -253,18 +253,22 @@ public class PlayerMovementController : NetworkBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q) && hasWeaponEquiped)
         {
-            CmdDrop();
+            CmdDropWeapon();
         }
     }
 
     [Command]
-    private void CmdDrop()
+    public void CmdDropWeapon()
     {
-        RPCDrop();
+        if(!hasWeaponEquiped)
+        {
+            return;
+        }
+        RPCDropWeapon();
     }
 
     [ClientRpc]
-    private void RPCDrop()
+    private void RPCDropWeapon()
     {
         GameObject weapon = GameObject.FindWithTag("DroppedWeapon_Empty");
 
