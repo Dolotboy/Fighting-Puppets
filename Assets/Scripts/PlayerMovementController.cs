@@ -199,6 +199,11 @@ public class PlayerMovementController : NetworkBehaviour
                     hit.transform.GetComponent<GoodsSpawner>().TakeObjectInIt();
                 }
             }
+
+            if (hit.transform.CompareTag("SecretActivator") && Input.GetKeyDown(KeyCode.E))
+            {
+                hit.transform.GetComponent<SecretButtonController>().Activate();
+            }
         }
     }
     

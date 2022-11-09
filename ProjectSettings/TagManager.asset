@@ -18,6 +18,8 @@ TagManager:
   - DroppedWeapon
   - Pickable
   - DroppedWeapon_Empty
+  - DroppedArmor
+  - SecretActivator
   layers:
   - Default
   - TransparentFX

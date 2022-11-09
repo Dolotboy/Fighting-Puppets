@@ -51,6 +51,7 @@ public class ScrollViewMapLoader : MonoBehaviour
 
         versusMaps.Add(new Map("Arena", "VersusArena", Resources.Load<Sprite>("MapImages/Arena"), 3));
         versusMaps.Add(new Map("SpaceShip", "VersusSpaceShip", Resources.Load<Sprite>("MapImages/SpaceShip"), 3));
+        versusMaps.Add(new Map("Ruins", "VersusRuins", Resources.Load<Sprite>("MapImages/MysticForest"), 3));
 
         loadCoopMaps();
     }

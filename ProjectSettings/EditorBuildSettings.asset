@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Versus/VersusArena.unity
     guid: 5929f8b29f7336e499a66474bcb08aaa
   - enabled: 1
+    path: Assets/Scenes/Versus/VersusRuins.unity
+    guid: 34fa93b9af0fe764382ed1c5b744bf01
+  - enabled: 1
     path: Assets/Scenes/Coop/CoopArena.unity
     guid: b69646cb30760924eb36efa5e501e9c5
   - enabled: 1
