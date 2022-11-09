@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 838562351763215030}
   m_Layer: 0
-  m_Name: GoodsSpawnerContainer
+  m_Name: GoodsSpawnerContainer_Random
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ddd5486ec9d5204cb22d5b2a6216800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRandom: 0
+  isRandom: 1
   goodsObjects:
   - {fileID: 2761873623006251624, guid: fa0f3e5d5d56292419f6059e53b3f0a0, type: 3}
   - {fileID: 4876385771716108729, guid: a1007266b5e88004fad24462b92a921c, type: 3}
@@ -134,5 +134,5 @@ MonoBehaviour:
   sceneId: 0
   serverOnly: 0
   visible: 0
-  m_AssetId: df32526779b62d44aa56360582d340b7
+  m_AssetId: 78a488806c9ae324bbbe644ddcf73e16
   hasSpawned: 0

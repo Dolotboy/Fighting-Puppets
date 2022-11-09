@@ -19,6 +19,9 @@ headset hat    : https://poly.pizza/m/a7h9oaV3xzV
 Planet	       : https://poly.pizza/m/6dOb2Q_w_pM
 Crystal        : https://sketchfab.com/3d-models/glowing-crystals-1c2e277c8c6b4c379ae55099c3122db1
 leather armor  : https://poly.pizza/m/na9KfWiKN8
+Cherry         : https://poly.pizza/m/8BsjISKsNIz
+Green Apple    : https://poly.pizza/m/3VXWnjDOEw
+Banana         : https://poly.pizza/m/ahOO6wz8sV0
 
 Market Stand   : https://poly.pizza/m/hts7l0NZxW
 furniture      : https://quaternius.com/packs/ultimatefurniture.html
