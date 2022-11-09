@@ -192,7 +192,7 @@ public class PlayerMovementController : NetworkBehaviour
             {
                 //Debug.Log(hit.transform);
                 //Debug.Log(hit.transform.childCount);
-                //Debug.Log(hit.transform.GetChild(0).gameObject.tag);
+                //Debug.Log(hit.transform.GetChild(0).gameObject.tag); 
                 if (hit.transform.GetChild(0).gameObject.tag == "DroppedArmor" && hit.transform.GetComponent<GoodsSpawner>().haveObjectInIt && Input.GetKeyDown(KeyCode.E))
                 {
                     gameObject.GetComponent<Health>().IncreaseArmorPoint(hit.transform.GetChild(0).GetComponent<Armor>().ArmorPoint);
