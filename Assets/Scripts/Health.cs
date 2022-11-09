@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using BrettArnett;
 using Mirror;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -8,12 +9,16 @@ using UnityEngine.UI;
 
 public class Health : NetworkBehaviour
 {
+    public double startingHealthPoint;
+
     [SerializeField] private double healthPoint;
     public double HealthPoint
     {
         get { return healthPoint; }
         set { healthPoint = value; }
     }
+
+    public double startingArmorPoint;
 
     [SerializeField] private double armorPoint;
 
@@ -39,8 +44,25 @@ public class Health : NetworkBehaviour
 
     private void Start()
     {
+        healthPoint = startingHealthPoint;
+        armorPoint = startingArmorPoint;
         UpdateHpTxt();
         UpdateArmorTxt();
+    }
+
+    private void Update()
+    {
+        if (healthPoint <= 0)
+        {
+            if (SteamLobby.instance.gamemode == "COOP")
+            {
+                CoopDeath();
+            }
+            else if (SteamLobby.instance.gamemode == "Versus")
+            {
+                VersusDeath();
+            }
+        }
     }
 
     void takeDamage(double damage)
@@ -95,9 +117,19 @@ public class Health : NetworkBehaviour
         armorTxt.text = Convert.ToString(armorPoint);
     }
 
-    void die()
+    void CoopDeath()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+    }
+
+    void VersusDeath()
+    {
+        healthPoint = startingHealthPoint;
+        armorPoint = startingArmorPoint;
+
+        GameObject[] spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
+        gameObject.GetComponent<PlayerMovementController>().CmdDropWeapon();
+        gameObject.GetComponent<PlayerMovementController>().SetSpawningPosition(spawnPoints);
     }
 
     public void TakeHit(string tag,double damageModifier)
