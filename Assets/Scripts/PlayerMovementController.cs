@@ -181,14 +181,14 @@ public class PlayerMovementController : NetworkBehaviour
  
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.transform.GetChild(0).CompareTag("DroppedWeapon") && Input.GetKeyDown(KeyCode.E) && !hasWeaponEquiped)
+            if (hit.transform.CompareTag("DroppedWeapon") && Input.GetKeyDown(KeyCode.E) && !hasWeaponEquiped)
             {
 
                 CmdSpawn(hit.transform);
                 //networkManager.Destroy(hit.transform.gameObject);
 
             }
-            else if(hit.transform.CompareTag("DroppedArmor") && Input.GetKeyDown(KeyCode.E))
+            else if(hit.transform.GetChild(0).CompareTag("DroppedArmor") && Input.GetKeyDown(KeyCode.E))
             {
                 gameObject.GetComponent<Health>().ArmorPoint = hit.transform.GetComponent<Armor>().ArmorPoint;
             }
