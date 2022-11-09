@@ -146,6 +146,7 @@ public class Health : NetworkBehaviour
         //Destroy(gameObject);
     }
 
+    [ClientRpc]
     void VersusDeath()
     {
         healthPoint = startingHealthPoint;
