@@ -60,6 +60,8 @@ public class PlayerMovementController : NetworkBehaviour
 
     private GameObject[] spawnPoints;
 
+    private bool hasWeaponEquiped;
+
 
     //private MyNetworkManager networkManager;
     
@@ -70,6 +72,7 @@ public class PlayerMovementController : NetworkBehaviour
     private void Start()
     {
         PlayerModel.SetActive(false);
+        hasWeaponEquiped = false;
         //networkManager = GetComponent<MyNetworkManager>();
     }
 
@@ -80,7 +83,6 @@ public class PlayerMovementController : NetworkBehaviour
             if (hasAuthority)
             {
                 Movement();
-                Interact();
             }
         }
     }
@@ -104,6 +106,8 @@ public class PlayerMovementController : NetworkBehaviour
             {
                 MyInput();
                 Look();
+                Interact();
+                Drop();
             }
         }
     }
@@ -174,7 +178,7 @@ public class PlayerMovementController : NetworkBehaviour
         Ray ray = new Ray(camTrasform.position, camTrasform.forward);
  
         if (Physics.Raycast(ray, out hit)) {
-            if (hit.transform.CompareTag("DroppedWeapon") && Input.GetKeyDown(KeyCode.E))
+            if (hit.transform.CompareTag("DroppedWeapon") && Input.GetKeyDown(KeyCode.E) && !hasWeaponEquiped)
             {
 
                 CmdSpawn(hit.transform);
@@ -193,19 +197,41 @@ public class PlayerMovementController : NetworkBehaviour
     [ClientRpc]
     private void RPCSpawn(Transform hit)
     {
-        GameObject weapon = Instantiate(hit.GetComponent<DroppedWeaponScript>().GetPrefab(), WeaponHolder.transform, true);
-        NetworkClient.RegisterPrefab(weapon);
-        
-        
+        GameObject weapon = hit.transform.GetChild(0).gameObject;
+        weapon.transform.parent = WeaponHolder.transform;
         weapon.transform.localPosition = new Vector3(0, 0, 0);
         weapon.transform.localScale = new Vector3(1f, 1f, 1f);
         weapon.transform.localRotation =
             hit.GetComponent<DroppedWeaponScript>().GetPrefab().transform.rotation;
         
-        NetworkServer.Spawn(weapon);
+        //NetworkServer.Spawn(weapon);
 
-        Destroy(hit.gameObject);
-        NetworkServer.Destroy(hit.gameObject);
+        //Destroy(hit.gameObject);
+        //NetworkServer.Destroy(hit.gameObject);
+
+        hasWeaponEquiped = true;
+    }
+
+    private void Drop()
+    {
+        if (Input.GetKeyDown(KeyCode.Q) && hasWeaponEquiped)
+        {
+            CmdDrop();
+        }
+    }
+
+    [Command]
+    private void CmdDrop()
+    {
+        RPCDrop();
+    }
+
+    [ClientRpc]
+    private void RPCDrop()
+    {
+        
+        
+        hasWeaponEquiped = false;
     }
     
     private void Movement()
