@@ -154,12 +154,12 @@ public class Health : NetworkBehaviour
     [ClientRpc]
     void VersusDeath()
     {
+        gameObject.GetComponent<PlayerMovementController>().CmdDropWeapon();
         healthPoint = startingHealthPoint;
         armorPoint = startingArmorPoint;
         ResetUI();
 
         GameObject[] spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
-        gameObject.GetComponent<PlayerMovementController>().CmdDropWeapon();
         gameObject.GetComponent<PlayerMovementController>().SetSpawningPosition(spawnPoints);
     }
 
