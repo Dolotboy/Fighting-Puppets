@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoodsSpawner : MonoBehaviour
+public class GoodsSpawner : NetworkBehaviour
 {
 
     [SerializeField] private bool isRandom;
