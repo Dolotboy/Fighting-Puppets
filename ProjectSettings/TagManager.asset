@@ -17,6 +17,7 @@ TagManager:
   - SpawnPoint
   - DroppedWeapon
   - Pickable
+  - DroppedWeapon_Empty
   layers:
   - Default
   - TransparentFX
