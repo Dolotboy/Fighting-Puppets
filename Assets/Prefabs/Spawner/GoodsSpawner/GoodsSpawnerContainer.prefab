@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 3123154950702360955}
   m_Layer: 0
   m_Name: GoodsSpawner
-  m_TagString: DroppedWeapon
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
