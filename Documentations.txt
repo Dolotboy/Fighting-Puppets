@@ -47,4 +47,8 @@ NetworkIdentity (Component):
 
 NetworkBehaviour:
 
-ClientRpc:
+ClientRpc: Code that runs on all clients
+
+Command: Command execute on the server after Update()
+
+HasAuthority:
