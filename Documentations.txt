@@ -43,6 +43,10 @@ How is working the attack and hitbox system:
 -When a part of the player is hit, the script HitBoxScript that the part has call the OnTriggerEnter which call the TakeHit() function from the Health script of the victim
 -The TakeHit() function will take a tag to determine which part of the body has been touch and the damage multiplier of the weapon and it will decrease armor or hp
 
+/************************************************************************
+
+https://docs.unity3d.com/2019.4/Documentation/Manual/class-NetworkBehaviour.html
+
 NetworkIdentity (Component):
 
 NetworkBehaviour:
