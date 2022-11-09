@@ -168,7 +168,6 @@ public class Health : NetworkBehaviour
     {
         if(!hasAuthority) { return;}
         
-        gameObject.GetComponent<Animator>().SetBool(IsHit,true);
         switch (tag)
         {
             case "Hitbox_Head":
