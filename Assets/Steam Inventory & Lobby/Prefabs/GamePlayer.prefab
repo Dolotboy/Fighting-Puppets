@@ -2273,7 +2273,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  healthPoint: 100
+  startingHealthPoint: 100
+  healthPoint: 0
+  startingArmorPoint: 0
   armorPoint: 0
   hpTxt: {fileID: 1198913679498747907}
   armorTxt: {fileID: 6583083576902110055}

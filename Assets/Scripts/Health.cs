@@ -52,6 +52,10 @@ public class Health : NetworkBehaviour
 
     private void Update()
     {
+        if(!hasAuthority) // If it's the right playerObject that calls this function, because when it's a NetworkBehaviour, everyone calls this
+        {
+            return;
+        }
         if (healthPoint <= 0)
         {
             if (SteamLobby.instance.gamemode == "COOP")
