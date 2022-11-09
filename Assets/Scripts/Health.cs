@@ -50,32 +50,17 @@ public class Health : NetworkBehaviour
         ResetUI();
     }
 
-    private void Update()
+    void takeDamage(double damage)
     {
-        if(!hasAuthority) // If it's the right playerObject that calls this function, because when it's a NetworkBehaviour, everyone calls this
+        if (!hasAuthority) // If it's the right playerObject that calls this function, because when it's a NetworkBehaviour, everyone calls this
         {
             return;
         }
         if (healthPoint <= 0)
         {
-            if (SteamLobby.instance.gamemode == "COOP")
-            {
-                CoopDeath();
-            }
-            else if (SteamLobby.instance.gamemode == "Versus")
-            {
-                VersusDeath();
-            }
+            CmdDeath();
         }
-    }
 
-    void takeDamage(double damage)
-    {
-        if (healthPoint <= 0)
-        {
-            Debug.Log("Dead");
-        }
-        
         if (armorPoint > 0)
         {
             decreaseArmorPoint(damage);
@@ -83,6 +68,7 @@ public class Health : NetworkBehaviour
             {
                 healthPoint += armorPoint;
                 armorPoint = 0;
+                UpdateTxtUI();
             }
         }
         else
@@ -96,6 +82,12 @@ public class Health : NetworkBehaviour
         UpdateHpTxt();
         UpdateArmorTxt();
         ResetHitBoxUI();
+    }
+
+    private void UpdateTxtUI()
+    {
+        UpdateHpTxt();
+        UpdateArmorTxt();
     }
 
     private void ResetHitBoxUI()
@@ -144,6 +136,19 @@ public class Health : NetworkBehaviour
     void CoopDeath()
     {
         //Destroy(gameObject);
+    }
+
+    [Command]
+    private void CmdDeath()
+    {
+        if (SteamLobby.instance.gamemode == "COOP")
+        {
+            CoopDeath();
+        }
+        else if (SteamLobby.instance.gamemode == "Versus")
+        {
+            VersusDeath();
+        }
     }
 
     [ClientRpc]
