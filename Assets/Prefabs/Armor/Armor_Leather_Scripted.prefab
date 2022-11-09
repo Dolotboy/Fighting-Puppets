@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1923087981505175415}
   - component: {fileID: 4419395854601857981}
   - component: {fileID: -1178767658440350325}
+  - component: {fileID: -688371721238480176}
   m_Layer: 0
   m_Name: Armor_Leather_Scripted
   m_TagString: DroppedArmor
@@ -97,3 +98,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armorPoint: 100
+--- !u!64 &-688371721238480176
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2761873623006251624}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1569980142671447554, guid: 8562ac296732c024789e3499dd625cf9, type: 3}
