@@ -81,11 +81,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRandom: 1
   goodsObjects:
-  - {fileID: 2761873623006251624, guid: fa0f3e5d5d56292419f6059e53b3f0a0, type: 3}
+  - {fileID: 2761873623006251624, guid: fe426a36691de0444936e592f3e92a1f, type: 3}
   - {fileID: 4876385771716108729, guid: a1007266b5e88004fad24462b92a921c, type: 3}
   - {fileID: 8973311606822094937, guid: e902e4987c62ff1479b1c77ed7e66eb1, type: 3}
   - {fileID: 4066463379827497992, guid: 67be042d1ffa16f4db5b01d18863ff53, type: 3}
   goodsNbrInList: 0
+  goodsObject: {fileID: 0}
 --- !u!95 &838562352679704100
 Animator:
   serializedVersion: 4
