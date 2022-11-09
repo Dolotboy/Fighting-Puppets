@@ -6,6 +6,8 @@ public class WeaponScript : MonoBehaviour
 {
     [SerializeField] private double damageModifier;
 
+    public string WeaponType = "1Handed";
+    
     public double GetDamageModifier()
     {
         return damageModifier;

@@ -207,6 +207,9 @@ public class PlayerMovementController : NetworkBehaviour
             hit.GetComponent<DroppedWeaponScript>().GetPrefab().transform.rotation;
 
         hit.tag = "DroppedWeapon_Empty";
+        CheckWeaponType(weapon);
+        
+        
         
         //NetworkServer.Spawn(weapon);
 
@@ -214,6 +217,24 @@ public class PlayerMovementController : NetworkBehaviour
         //NetworkServer.Destroy(hit.gameObject);
 
         hasWeaponEquiped = true;
+    }
+
+    private void CheckWeaponType(GameObject weapon)
+    {
+        switch (weapon.GetComponentInChildren<WeaponScript>().WeaponType)
+        {
+            case "1Handed":
+            {
+                anim.SetBool(IsOneHanded,true);
+                anim.SetBool(IsTwoHanded,false);
+            } break;
+            case "2Handed":
+            {
+                anim.SetBool(IsOneHanded,false);
+                anim.SetBool(IsTwoHanded,true);
+            } break;
+        }
+        
     }
 
     private void Drop()
@@ -243,7 +264,15 @@ public class PlayerMovementController : NetworkBehaviour
             hasWeaponEquiped = false;
             weapon.tag = "DroppedWeapon";
         }
-        
+
+        ResetWeaponType();
+
+    }
+
+    private void ResetWeaponType()
+    {
+        anim.SetBool(IsOneHanded,true);
+        anim.SetBool(IsTwoHanded,false);
     }
     
     private void Movement()
@@ -399,6 +428,8 @@ public class PlayerMovementController : NetworkBehaviour
 
     private bool cancellingGrounded;
     private static readonly int IsRolling = Animator.StringToHash("isRolling");
+    private static readonly int IsOneHanded = Animator.StringToHash("isOneHanded");
+    private static readonly int IsTwoHanded = Animator.StringToHash("isTwoHanded");
 
     /// <summary>
     /// Handle ground detection
