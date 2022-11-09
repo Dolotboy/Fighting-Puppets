@@ -1,3 +1,4 @@
+using Mirror;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -48,6 +49,7 @@ public class GoodsSpawner : MonoBehaviour
         goodsObject = goodsObjects[goodsNbrInList];
 
         GameObject newPrefab = Instantiate(goodsObject, transform, true);
+        newPrefab.AddComponent<NetworkIdentity>();
         newPrefab.transform.localPosition = new Vector3(0, 0, 0);
         //newPrefab.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
     }
@@ -62,6 +64,7 @@ public class GoodsSpawner : MonoBehaviour
         }
 
         GameObject newPrefab = Instantiate(goodsObject, transform, true);
+        newPrefab.AddComponent<NetworkIdentity>();
         newPrefab.transform.localPosition = new Vector3(0, 0, 0);
     }
 }
