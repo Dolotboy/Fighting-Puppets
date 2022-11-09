@@ -11,7 +11,7 @@ public class GoodsSpawner : MonoBehaviour
 
     [SerializeField] private int goodsNbrInList;
 
-    private GameObject goodsObject;
+    [SerializeField] private GameObject goodsObject;
     
     
     void Start()
@@ -50,5 +50,8 @@ public class GoodsSpawner : MonoBehaviour
         {
             goodsObject = goodsObjects[rnd.Next(0, goodsObjects.Count)];
         }
+
+        GameObject newPrefab = Instantiate(goodsObject, transform, true);
+        newPrefab.transform.localPosition = new Vector3(0, 0, 0);
     }
 }

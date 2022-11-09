@@ -10,6 +10,13 @@ public class InputManager : NetworkBehaviour
 {
     public KeyCode escapeMenuInput = KeyCode.Escape;
     public KeyCode interactInput = KeyCode.E;
+    public KeyCode forwardInput = KeyCode.W;
+    public KeyCode backwardInput = KeyCode.S;
+    public KeyCode leftInput = KeyCode.A;
+    public KeyCode rightInput = KeyCode.D;
+    public KeyCode dropWeaponInput = KeyCode.Q;
+    public KeyCode jumpInput = KeyCode.Space;
+
     public Camera cam;
 
     public GameObject escapeMenu;
@@ -25,6 +32,7 @@ public class InputManager : NetworkBehaviour
     void Update()
     {
         
+        //Escape Menu code is here because it is toggle disable by default, so it need an object to support it for itself
         if(!hasAuthority) { return; }
         if(Input.GetKeyDown(escapeMenuInput) && SceneManager.GetActiveScene().name != "Scene_Lobby" && SceneManager.GetActiveScene().name != "Scene_Steamworks")
         {
