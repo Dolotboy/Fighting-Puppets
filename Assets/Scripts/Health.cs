@@ -164,7 +164,7 @@ public class Health : NetworkBehaviour
         gameObject.GetComponent<PlayerMovementController>().SetSpawningPosition(spawnPoints);
     }
 
-    public void TakeHit(string tag,double damageModifier)
+    public void TakeHit(string tag,double damageModifier,Transform damageDealer)
     {
         if(!hasAuthority) { return;}
         
@@ -174,55 +174,82 @@ public class Health : NetworkBehaviour
             {
                 Debug.Log("Hit in Head");
                 takeDamage(10 * damageModifier);
+
+                damageDealer.parent.transform.parent.GetComponent<WeaponHolderController>().GetHoldingPlayer().GetComponent<AnimationStateController>().HitEnemy();
+                
                 Head.GetComponent<Image>().color = new Color32(255,0,0,100);
             } break;
             case "Hitbox_Torso":
             {
                 Debug.Log("Hit in Torso");
-                takeDamage(7 * damageModifier);                
+                takeDamage(7 * damageModifier);     
+                
+                damageDealer.parent.transform.parent.GetComponent<WeaponHolderController>().GetHoldingPlayer().GetComponent<AnimationStateController>().HitEnemy();
+
                 Torso.GetComponent<Image>().color = new Color32(255,0,0,100);
 
             } break;
             case "Hitbox_Hips":
             {
                 Debug.Log("Hit in Hips");
-                takeDamage(4 * damageModifier);                
+                takeDamage(4 * damageModifier);  
+                
+                damageDealer.parent.transform.parent.GetComponent<WeaponHolderController>().GetHoldingPlayer().GetComponent<AnimationStateController>().HitEnemy();
+
                 Hips.GetComponent<Image>().color = new Color32(255,0,0,100);
             } break;
             case "Hitbox_LeftLeg":
             {
                 Debug.Log("Hit in Left Leg");
-                takeDamage(2 * damageModifier);                
+                takeDamage(2 * damageModifier);       
+                
+                damageDealer.parent.transform.parent.GetComponent<WeaponHolderController>().GetHoldingPlayer().GetComponent<AnimationStateController>().HitEnemy();
+
                 LeftLeg.GetComponent<Image>().color = new Color32(255,0,0,100);
             } break;
             case "Hitbox_RightLeg":
             {
                 Debug.Log("Hit in Right Leg");
-                takeDamage(2 * damageModifier);                
+                takeDamage(2 * damageModifier);   
+                
+                damageDealer.parent.transform.parent.GetComponent<WeaponHolderController>().GetHoldingPlayer().GetComponent<AnimationStateController>().HitEnemy();
+
                 RightLeg.GetComponent<Image>().color = new Color32(255,0,0,100);
             } break;
             case "Hitbox_LeftArm":
             {
                 Debug.Log("Hit in Left Arm");
-                takeDamage(1 * damageModifier);                
+                takeDamage(1 * damageModifier);   
+                
+                damageDealer.parent.transform.parent.GetComponent<WeaponHolderController>().GetHoldingPlayer().GetComponent<AnimationStateController>().HitEnemy();
+
                 LeftArm.GetComponent<Image>().color = new Color32(255,0,0,100);
             } break;
             case "Hitbox_RightArm":
             {
                 Debug.Log("Hit in Right Arm");
-                takeDamage(1 * damageModifier);                
+                takeDamage(1 * damageModifier);   
+                
+                damageDealer.parent.transform.parent.GetComponent<WeaponHolderController>().GetHoldingPlayer().GetComponent<AnimationStateController>().HitEnemy();
+
                 RightArm.GetComponent<Image>().color = new Color32(255,0,0,100);
             } break;
             case "Hitbox_LeftForeArm":
             {
                 Debug.Log("Hit in Left Forearm");
-                takeDamage(1 * damageModifier);                
+                takeDamage(1 * damageModifier);   
+                
+                damageDealer.parent.transform.parent.GetComponent<WeaponHolderController>().GetHoldingPlayer().GetComponent<AnimationStateController>().HitEnemy();
+
                 LeftForeArm.GetComponent<Image>().color = new Color32(255,0,0,100);
             } break;
             case "Hitbox_RightForeArm":
             {
                 Debug.Log("Hit in Right Forearm");
-                takeDamage(1 * damageModifier);                
+                takeDamage(1 * damageModifier);     
+                
+                damageDealer.parent.transform.parent.GetComponent<WeaponHolderController>().GetHoldingPlayer().GetComponent<AnimationStateController>().HitEnemy();
+
                 RightForeArm.GetComponent<Image>().color = new Color32(255,0,0,100);
             } break;
         }

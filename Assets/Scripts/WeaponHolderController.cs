@@ -16,4 +16,9 @@ public class WeaponHolderController : MonoBehaviour
    {
       GamePlayer.GetComponent<AnimationStateController>().DisableWeapons(transform);
    }
+
+   public GameObject GetHoldingPlayer()
+   {
+      return GamePlayer;
+   }
 }
