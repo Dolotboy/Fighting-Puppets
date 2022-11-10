@@ -17,6 +17,8 @@ public class PlayerMovementController : NetworkBehaviour
     public GameObject PlayerModel;
 
     public GameObject WeaponHolder;
+
+    public GameObject PuppetUI;
     
     public Transform playerCam;
     //public Transform orientation;
@@ -102,6 +104,7 @@ public class PlayerMovementController : NetworkBehaviour
                 playerScale = transform.localScale;
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+                PuppetUI.SetActive(true);
             }
 
             if (hasAuthority)

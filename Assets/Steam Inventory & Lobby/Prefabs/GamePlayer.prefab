@@ -2253,6 +2253,7 @@ MonoBehaviour:
   Speed: 0.1
   PlayerModel: {fileID: 2533326750345460138}
   WeaponHolder: {fileID: 1821104923593200909}
+  PuppetUI: {fileID: 4526287160186651537}
   playerCam: {fileID: 2923888488299561270}
   moveSpeed: 1500
   maxSpeed: 3
@@ -2317,7 +2318,6 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   cameraHolder: {fileID: 5572389551921505593}
-  UI: {fileID: 4526287160186651537}
 --- !u!54 &3188384052249760012
 Rigidbody:
   m_ObjectHideFlags: 0
