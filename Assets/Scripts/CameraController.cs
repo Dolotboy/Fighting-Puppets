@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
+using UnityEngine.SceneManagement;
 
 public class CameraController : NetworkBehaviour
 {
@@ -10,6 +11,9 @@ public class CameraController : NetworkBehaviour
     public override void OnStartAuthority()
     {
         cameraHolder.SetActive(true);
-        UI.SetActive(true);
+        if (SceneManager.GetActiveScene().name != "Scene_Lobby" && SceneManager.GetActiveScene().name != "Scene_Steamworks")
+        {
+            UI.SetActive(true);
+        }
     }
 }
