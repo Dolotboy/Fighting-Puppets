@@ -21,11 +21,6 @@ public class AnimationStateController : NetworkBehaviour
         //anim = GetComponent<Animator>();
     }
 
-    public void HitEnemy()
-    {
-        Debug.Log("Did Damage");
-    }
-
     // Update is called once per frame
     void Update()
     {

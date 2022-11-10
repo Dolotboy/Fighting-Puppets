@@ -12,4 +12,9 @@ public class WeaponScript : MonoBehaviour
     {
         return damageModifier;
     }
+
+    public void GetDamageDone()
+    {
+        Debug.Log("Damage Done to Enemy");
+    }
 }

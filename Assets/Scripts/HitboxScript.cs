@@ -13,7 +13,7 @@ public class HitboxScript : MonoBehaviour
         {
             Debug.Log("Test");
             PlayerObject.GetComponent<Health>().TakeHit(gameObject.tag,collider.GetComponent<WeaponScript>().GetDamageModifier());
-            collider.SendMessage("HitEnemy");
+            collider.GetComponent<WeaponScript>().GetDamageDone();
         }
     }
 }
