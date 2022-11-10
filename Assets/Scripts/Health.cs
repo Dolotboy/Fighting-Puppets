@@ -166,6 +166,7 @@ public class Health : NetworkBehaviour
 
     public void TakeHit(string tag,double damageModifier)
     {
+
         if(!hasAuthority) { return;}
         
         switch (tag)
@@ -174,7 +175,6 @@ public class Health : NetworkBehaviour
             {
                 Debug.Log("Hit in Head");
                 takeDamage(10 * damageModifier);
-                
                 Head.GetComponent<Image>().color = new Color32(255,0,0,100);
             } break;
             case "Hitbox_Torso":
