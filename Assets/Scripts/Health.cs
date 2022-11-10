@@ -181,7 +181,6 @@ public class Health : NetworkBehaviour
             {
                 Debug.Log("Hit in Torso");
                 takeDamage(7 * damageModifier);     
-                
 
                 Torso.GetComponent<Image>().color = new Color32(255,0,0,100);
 
