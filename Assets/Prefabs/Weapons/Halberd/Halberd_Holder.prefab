@@ -176,4 +176,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e239ca86d7a604f4cbfe0b910cb7c4dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageModifier: 1
+  damageModifier: 4
+  WeaponType: 1Handed

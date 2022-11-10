@@ -110,7 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e239ca86d7a604f4cbfe0b910cb7c4dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageModifier: 5
+  damageModifier: 3
+  WeaponType: 1Handed
 --- !u!1 &8189157095614025167
 GameObject:
   m_ObjectHideFlags: 0
