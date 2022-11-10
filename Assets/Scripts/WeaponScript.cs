@@ -17,6 +17,7 @@ public class WeaponScript : MonoBehaviour
     public void SendDamageToUI(string message)
     { 
         GameObject.FindWithTag("UIMessage").GetComponent<Text>().text = message;
+        GameObject.FindWithTag("UIMessage").transform.parent.GetComponent<Animator>().Play("PointsUI");
     }
 
     private void OnTriggerEnter(Collider collider)
