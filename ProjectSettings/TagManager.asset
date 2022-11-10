@@ -20,6 +20,7 @@ TagManager:
   - DroppedWeapon_Empty
   - DroppedArmor
   - SecretActivator
+  - UIMessage
   layers:
   - Default
   - TransparentFX

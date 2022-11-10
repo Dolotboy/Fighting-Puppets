@@ -2479,9 +2479,10 @@ GameObject:
   - component: {fileID: 3619711112103114325}
   - component: {fileID: 8709246115918935932}
   - component: {fileID: 358982974771728841}
+  - component: {fileID: 885845223501147092}
   m_Layer: 0
   m_Name: Text (Legacy)
-  m_TagString: Untagged
+  m_TagString: UIMessage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2548,6 +2549,26 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
+--- !u!95 &885845223501147092
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6428464261309613273}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 83c48ecfef1b9c949872d203a80e8b14, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6469739633227659016
 GameObject:
   m_ObjectHideFlags: 0
