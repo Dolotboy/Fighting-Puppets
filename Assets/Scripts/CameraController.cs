@@ -11,6 +11,6 @@ public class CameraController : NetworkBehaviour
     public override void OnStartAuthority()
     {
         cameraHolder.SetActive(true);
-        PuppetUI.SetActive(true);
+        //PuppetUI.SetActive(true);
     }
 }

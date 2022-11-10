@@ -101,7 +101,7 @@ public class PlayerMovementController : NetworkBehaviour
                 spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
                 SetSpawningPosition(spawnPoints);
                 PlayerModel.SetActive(true);
-                //PuppetUI.SetActive(true);
+                PuppetUI.SetActive(true);
                 playerScale = transform.localScale;
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
