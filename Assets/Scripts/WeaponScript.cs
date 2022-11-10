@@ -13,9 +13,9 @@ public class WeaponScript : MonoBehaviour
         return damageModifier;
     }
 
-    public void GetDamageDone(string tag)
+    private void OnTriggerEnter(Collider collider)
     {
-        switch (tag)
+        switch (collider.gameObject.tag)
         {
             case "Hitbox_Head":
             {
