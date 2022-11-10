@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 public class CameraController : NetworkBehaviour
 {
     public GameObject cameraHolder;
+    public GameObject PuppetUI;
     public override void OnStartAuthority()
     {
         cameraHolder.SetActive(true);
+        //PuppetUI.SetActive(true);
     }
 }

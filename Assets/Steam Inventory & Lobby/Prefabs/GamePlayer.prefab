@@ -2318,6 +2318,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   cameraHolder: {fileID: 5572389551921505593}
+  PuppetUI: {fileID: 4526287160186651537}
 --- !u!54 &3188384052249760012
 Rigidbody:
   m_ObjectHideFlags: 0
