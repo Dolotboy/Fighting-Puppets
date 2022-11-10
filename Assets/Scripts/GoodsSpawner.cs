@@ -55,6 +55,7 @@ public class GoodsSpawner : NetworkBehaviour
         Destroy(gameObject.transform.GetChild(0).gameObject);
     }
 
+    [ClientRpc]
     void LoadGoods()
     {
         if (!haveObjectInIt)
@@ -68,6 +69,7 @@ public class GoodsSpawner : NetworkBehaviour
         }
     }
 
+    [ClientRpc]
     void LoadRandomGoods()
     {
         if (!haveObjectInIt)
