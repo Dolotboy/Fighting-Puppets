@@ -265,6 +265,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoodsSpawnerContainer_Random
       objectReference: {fileID: 0}
+    - target: {fileID: 838562352679704106, guid: 78a488806c9ae324bbbe644ddcf73e16,
+        type: 3}
+      propertyPath: haveObjectInIt
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 838562352679704106, guid: 78a488806c9ae324bbbe644ddcf73e16,
+        type: 3}
+      propertyPath: goodsRespawnTime
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3123154950702360955, guid: 78a488806c9ae324bbbe644ddcf73e16,
         type: 3}
       propertyPath: sceneId
@@ -1702,6 +1712,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GoodsSpawnerContainer
+      objectReference: {fileID: 0}
+    - target: {fileID: 838562352679704106, guid: df32526779b62d44aa56360582d340b7,
+        type: 3}
+      propertyPath: haveObjectInIt
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 838562352679704106, guid: df32526779b62d44aa56360582d340b7,
+        type: 3}
+      propertyPath: goodsRespawnTime
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 838562352679704106, guid: df32526779b62d44aa56360582d340b7,
+        type: 3}
+      propertyPath: isRespawningGoods
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3123154950702360955, guid: df32526779b62d44aa56360582d340b7,
         type: 3}

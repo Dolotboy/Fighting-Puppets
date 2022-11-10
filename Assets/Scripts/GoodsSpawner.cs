@@ -10,7 +10,9 @@ public class GoodsSpawner : NetworkBehaviour
 
     [SerializeField] private bool isRespawningGoods;
 
-    public bool haveObjectInIt = true;
+    [SerializeField] private float goodsRespawnTime;
+
+    public bool haveObjectInIt = false;
 
     [SerializeField] private List<GameObject> goodsObjects;
 
@@ -21,21 +23,29 @@ public class GoodsSpawner : NetworkBehaviour
     
     void Start()
     {
+        haveObjectInIt = false;
         if(isRandom)
         {
-            LoadRandomGoods();
+            if(isRespawningGoods)
+            {
+                InvokeRepeating("LoadRandomGoods", goodsRespawnTime, goodsRespawnTime);
+            }
+            else
+            {
+                LoadRandomGoods();
+            }
         }
         else
         {
-            LoadGoods();
+            if (isRespawningGoods)
+            {
+                InvokeRepeating("LoadGoods", goodsRespawnTime, goodsRespawnTime);
+            }
+            else
+            {
+                LoadGoods();
+            }
         }
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     [ClientRpc]
@@ -47,25 +57,32 @@ public class GoodsSpawner : NetworkBehaviour
 
     void LoadGoods()
     {
-        goodsObject = goodsObjects[goodsNbrInList];
+        if (!haveObjectInIt)
+        {
+            goodsObject = goodsObjects[goodsNbrInList];
 
-        GameObject newPrefab = Instantiate(goodsObject, transform, true);
-        //newPrefab.AddComponent<NetworkIdentity>();
-        newPrefab.transform.localPosition = new Vector3(0, 0, 0);
-        //newPrefab.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            GameObject newPrefab = Instantiate(goodsObject, transform, true);
+            newPrefab.transform.localPosition = new Vector3(0, 0, 0);
+
+            haveObjectInIt = true;
+        }
     }
 
     void LoadRandomGoods()
     {
-        var rnd = new System.Random();
-
-        if (goodsObjects.Count >= 1)
+        if (!haveObjectInIt)
         {
-            goodsObject = goodsObjects[rnd.Next(0, goodsObjects.Count)];
-        }
+            var rnd = new System.Random();
 
-        GameObject newPrefab = Instantiate(goodsObject, transform, true);
-        //newPrefab.AddComponent<NetworkIdentity>();
-        newPrefab.transform.localPosition = new Vector3(0, 0, 0);
+            if (goodsObjects.Count >= 1)
+            {
+                goodsObject = goodsObjects[rnd.Next(0, goodsObjects.Count)];
+            }
+
+            GameObject newPrefab = Instantiate(goodsObject, transform, true);
+            newPrefab.transform.localPosition = new Vector3(0, 0, 0);
+
+            haveObjectInIt = true;
+        }
     }
 }
