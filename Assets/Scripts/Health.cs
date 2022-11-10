@@ -12,6 +12,8 @@ public class Health : NetworkBehaviour
 {
     public double startingHealthPoint;
 
+    public double maxHealthPoint;
+
     [SerializeField] private double healthPoint;
     public double HealthPoint
     {
@@ -20,6 +22,8 @@ public class Health : NetworkBehaviour
     }
 
     public double startingArmorPoint;
+
+    public double maxArmorPoint;
 
     [SerializeField] private double armorPoint;
 
@@ -107,7 +111,21 @@ public class Health : NetworkBehaviour
     public void IncreaseArmorPoint(double armorPoint)
     {
         this.armorPoint += armorPoint;
+        if(this.armorPoint > maxArmorPoint)
+        {
+            this.armorPoint = maxArmorPoint;
+        }
         UpdateArmorTxt();
+    }
+
+    public void IncreaseHealthPoint(double healthPoint)
+    {
+        this.healthPoint += healthPoint;
+        if (this.healthPoint > maxHealthPoint)
+        {
+            this.healthPoint = maxHealthPoint;
+        }
+        UpdateHpTxt();
     }
 
     void decreaseArmorPoint(double damage)

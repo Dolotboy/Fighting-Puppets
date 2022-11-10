@@ -2427,8 +2427,10 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   startingHealthPoint: 100
+  maxHealthPoint: 100
   healthPoint: 0
   startingArmorPoint: 0
+  maxArmorPoint: 100
   armorPoint: 0
   hpTxt: {fileID: 1198913679498747907}
   armorTxt: {fileID: 6583083576902110055}
