@@ -55,4 +55,4 @@ ClientRpc: Code that runs on all clients
 
 Command: Command execute on the server after Update()
 
-HasAuthority:
+HasAuthority: Is used to something that each player has his one (Example PuppetUI in Update() PlayerMovementController)
