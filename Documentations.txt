@@ -51,8 +51,8 @@ NetworkIdentity (Component):
 
 NetworkBehaviour:
 
-ClientRpc: Code that runs on all clients
+ClientRpc: Code that runs on all clients / It runs the function on all clients using data from the server
 
-Command: Command execute on the server after Update()
+Command: Command execute on the server after Update() / It runs the function on the server using data on the client
 
 HasAuthority: Is used to something that each player has his one (Example PuppetUI in Update() PlayerMovementController)
