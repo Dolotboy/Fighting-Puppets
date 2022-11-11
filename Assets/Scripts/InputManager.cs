@@ -16,6 +16,7 @@ public class InputManager : NetworkBehaviour
     public KeyCode rightInput = KeyCode.D;
     public KeyCode dropWeaponInput = KeyCode.Q;
     public KeyCode jumpInput = KeyCode.Space;
+    public KeyCode switchCamInput = KeyCode.C;
 
     public Camera cam;
 

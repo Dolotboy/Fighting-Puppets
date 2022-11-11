@@ -23,6 +23,9 @@ public class PlayerMovementController : NetworkBehaviour
     public Transform playerCam;
     //public Transform orientation;
 
+    public Camera fpsCam;
+    public Camera tpsCam;
+
     //Other
     private Rigidbody rb;
 
@@ -210,6 +213,24 @@ public class PlayerMovementController : NetworkBehaviour
             {
                 hit.transform.GetComponent<SecretButtonController>().Activate();
             }
+        }
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            SwitchPlayerCam();
+        }
+    }
+
+    private void SwitchPlayerCam()
+    {
+        if(fpsCam.gameObject.activeInHierarchy)
+        {
+            tpsCam.gameObject.SetActive(true);
+            fpsCam.gameObject.SetActive(false);
+        }
+        else if(tpsCam.gameObject.activeInHierarchy)
+        {
+            fpsCam.gameObject.SetActive(true);
+            tpsCam.gameObject.SetActive(false);
         }
     }
     

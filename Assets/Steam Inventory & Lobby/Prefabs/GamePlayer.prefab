@@ -2374,6 +2374,8 @@ MonoBehaviour:
   WeaponHolder: {fileID: 1821104923593200909}
   PuppetUI: {fileID: 4526287160186651537}
   playerCam: {fileID: 2923888488299561270}
+  fpsCam: {fileID: 5816990018523134451}
+  tpsCam: {fileID: 3446735757053237307}
   moveSpeed: 1500
   maxSpeed: 3
   grounded: 0
@@ -2585,6 +2587,7 @@ MonoBehaviour:
   rightInput: 100
   dropWeaponInput: 113
   jumpInput: 32
+  switchCamInput: 99
   cam: {fileID: 3446735757053237307}
   escapeMenu: {fileID: 3583971024913191893}
   weaponHolder: {fileID: 1821104923593200909}
