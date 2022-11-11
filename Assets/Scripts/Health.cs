@@ -14,6 +14,8 @@ public class Health : NetworkBehaviour
 
     public double maxHealthPoint;
 
+    public Text UIMessage;
+
     [SerializeField] private double healthPoint;
     public double HealthPoint
     {
