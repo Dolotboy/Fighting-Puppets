@@ -289,8 +289,13 @@ public class PlayerMovementController : NetworkBehaviour
         }
     }
 
+    public void DropWeaponOnDeath()
+    {
+        CmdDropWeapon();
+    }
+
     [Command]
-    public void CmdDropWeapon()
+    private void CmdDropWeapon()
     {
         if(!hasWeaponEquiped)
         {
