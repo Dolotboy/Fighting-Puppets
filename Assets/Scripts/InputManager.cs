@@ -50,7 +50,5 @@ public class InputManager : NetworkBehaviour
                 escapeMenu.SetActive(true);
             }
         }
-
-        
     }
 }

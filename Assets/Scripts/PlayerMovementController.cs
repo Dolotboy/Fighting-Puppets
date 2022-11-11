@@ -271,11 +271,20 @@ public class PlayerMovementController : NetworkBehaviour
             {
                 anim.SetBool(IsOneHanded,true);
                 anim.SetBool(IsTwoHanded,false);
+                anim.SetBool(IsRifle,true);
             } break;
             case "2Handed":
             {
                 anim.SetBool(IsOneHanded,false);
                 anim.SetBool(IsTwoHanded,true);
+                anim.SetBool(IsRifle,false);
+
+            } break;
+            case "Rifle":
+            {
+                anim.SetBool(IsOneHanded,false);
+                anim.SetBool(IsTwoHanded,false);
+                anim.SetBool(IsRifle,true);
             } break;
         }
         
@@ -329,6 +338,8 @@ public class PlayerMovementController : NetworkBehaviour
     {
         anim.SetBool(IsOneHanded,true);
         anim.SetBool(IsTwoHanded,false);
+        anim.SetBool(IsRifle,false);
+
     }
     
     private void Movement()
@@ -486,6 +497,7 @@ public class PlayerMovementController : NetworkBehaviour
     private static readonly int IsRolling = Animator.StringToHash("isRolling");
     private static readonly int IsOneHanded = Animator.StringToHash("isOneHanded");
     private static readonly int IsTwoHanded = Animator.StringToHash("isTwoHanded");
+    private static readonly int IsRifle = Animator.StringToHash("isRifle");
 
     /// <summary>
     /// Handle ground detection

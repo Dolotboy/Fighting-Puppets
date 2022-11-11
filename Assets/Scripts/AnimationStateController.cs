@@ -73,8 +73,16 @@ public class AnimationStateController : NetworkBehaviour
     {
         if (transform.childCount > 0)
         {
-            Debug.Log("Yes");
-            holder.GetComponentInChildren<Transform>().GetComponentInChildren<Collider>().enabled = true;
+            if (holder.GetChild(0).CompareTag("Rifle"))
+            {
+                Debug.Log("Rifle");
+                holder.GetChild(0).GetComponentInChildren<RifleScript>().Fire();
+            }
+            else
+            {
+                Debug.Log("Yes");
+                holder.GetComponentInChildren<Transform>().GetComponentInChildren<Collider>().enabled = true;
+            }
         }
     }
 

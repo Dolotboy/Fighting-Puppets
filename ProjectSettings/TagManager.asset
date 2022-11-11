@@ -21,6 +21,8 @@ TagManager:
   - DroppedArmor
   - SecretActivator
   - UIMessage
+  - Bullet
+  - Rifle
   layers:
   - Default
   - TransparentFX
