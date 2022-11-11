@@ -118,7 +118,7 @@ public class PlayerMovementController : NetworkBehaviour
                 MyInput();
                 Look();
                 Interact();
-                Drop();
+                Drop(transform);
             }
         }
     }
@@ -161,7 +161,6 @@ public class PlayerMovementController : NetworkBehaviour
     {
     }
 
-    [ClientRpc]
     public void SetSpawningPosition(GameObject[] spawnPoints)
     {
         if (spawnPoints.Length == 0)
@@ -282,39 +281,41 @@ public class PlayerMovementController : NetworkBehaviour
         
     }
 
-    private void Drop()
+    private void Drop(Transform _transform)
     {
         if (Input.GetKeyDown(KeyCode.Q) && hasWeaponEquiped)
         {
-            CmdDropWeapon();
+            CmdDropWeapon(_transform);
         }
     }
 
-    public void DropWeaponOnDeath()
+    public void DropWeaponOnDeath(Transform _transform)
     {
-        CmdDropWeapon();
+        CmdDropWeapon(_transform);
     }
 
     [Command]
-    private void CmdDropWeapon()
+    private void CmdDropWeapon(Transform _transform)
     {
         if(!hasWeaponEquiped)
         {
             return;
         }
-        RPCDropWeapon();
+        RPCDropWeapon(_transform);
     }
 
     [ClientRpc]
-    private void RPCDropWeapon()
+    private void RPCDropWeapon(Transform _transform)
     {
         GameObject weapon = GameObject.FindWithTag("DroppedWeapon_Empty");
 
         if (weapon.transform.childCount == 0)
         {
             Debug.Log("Weapon position:" + transform.position);
-            weapon.transform.parent.transform.position = transform.position;
-            weapon.transform.position = transform.localPosition;
+            //weapon.transform.parent.transform.position = transform.position;
+            //weapon.transform.position = transform.localPosition;
+            weapon.transform.parent.transform.position = _transform.position;
+            weapon.transform.position = _transform.localPosition;
             WeaponHolder.transform.GetChild(0).parent = weapon.transform;
             hasWeaponEquiped = false;
             weapon.tag = "DroppedWeapon";
