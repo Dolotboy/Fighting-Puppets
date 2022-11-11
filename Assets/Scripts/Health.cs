@@ -172,7 +172,7 @@ public class Health : NetworkBehaviour
         }
     }
 
-    [ClientRpc]
+    
     void VersusDeath()
     {
         Debug.Log("Player position on death" + gameObject.transform.position);
