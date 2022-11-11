@@ -172,17 +172,20 @@ public class Health : NetworkBehaviour
         }
     }
 
-    
+    [ClientRpc]
     void VersusDeath()
     {
         Debug.Log("Player position on death" + gameObject.transform.position);
         gameObject.GetComponent<PlayerMovementController>().DropWeaponOnDeath(transform);
+
+        GameObject[] spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
+        gameObject.GetComponent<PlayerMovementController>().SetSpawningPosition(spawnPoints);
+
         healthPoint = startingHealthPoint;
         armorPoint = startingArmorPoint;
         ResetUI();
 
-        GameObject[] spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
-        gameObject.GetComponent<PlayerMovementController>().SetSpawningPosition(spawnPoints);
+
     }
 
     public void TakeHit(string tag,double damageModifier)
