@@ -175,6 +175,7 @@ public class Health : NetworkBehaviour
     [ClientRpc]
     void VersusDeath()
     {
+        Debug.Log("Player position on death" + gameObject.transform.position);
         gameObject.GetComponent<PlayerMovementController>().DropWeaponOnDeath();
         healthPoint = startingHealthPoint;
         armorPoint = startingArmorPoint;

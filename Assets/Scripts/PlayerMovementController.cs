@@ -311,6 +311,7 @@ public class PlayerMovementController : NetworkBehaviour
 
         if (weapon.transform.childCount == 0)
         {
+            Debug.Log("Weapon position:" + transform.position);
             weapon.transform.parent.transform.position = transform.position;
             weapon.transform.position = transform.localPosition;
             WeaponHolder.transform.GetChild(0).parent = weapon.transform;
