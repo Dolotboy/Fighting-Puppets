@@ -86,4 +86,6 @@ public class AnimationStateController : NetworkBehaviour
             holder.GetComponentInChildren<Transform>().GetComponentInChildren<Collider>().enabled = false;
         }
     }
+    
+    
 }
