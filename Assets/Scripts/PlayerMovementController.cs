@@ -161,6 +161,7 @@ public class PlayerMovementController : NetworkBehaviour
     {
     }
 
+    [ClientRpc]
     public void SetSpawningPosition(GameObject[] spawnPoints)
     {
         if (spawnPoints.Length == 0)
