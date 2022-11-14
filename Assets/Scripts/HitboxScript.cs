@@ -14,10 +14,10 @@ public class HitboxScript : MonoBehaviour
             Debug.Log("Test");
             PlayerObject.GetComponent<Health>().TakeHit(gameObject.tag,collider.GetComponent<WeaponScript>().GetDamageModifier());
         }
+    }
 
-        if (collider.gameObject.CompareTag("Bullet"))
-        {
-            PlayerObject.GetComponent<Health>().TakeHit(gameObject.tag,collider.transform.parent.parent.GetComponent<WeaponScript>().GetDamageModifier());
-        }
+    public void GetHitFromRay(double damageModifier)
+    {
+        PlayerObject.GetComponent<Health>().TakeHit(gameObject.tag,damageModifier);
     }
 }

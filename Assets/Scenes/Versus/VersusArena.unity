@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 147383952}
   - component: {fileID: 147383951}
   - component: {fileID: 147383950}
+  - component: {fileID: 147383953}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Hitbox_Head
@@ -295,6 +296,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147383948}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &147383953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147383948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f9a2daf72952b479cb60c588639972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerObject: {fileID: 147383948}
 --- !u!1001 &245913651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1045,6 +1059,7 @@ GameObject:
   - component: {fileID: 818952438}
   - component: {fileID: 818952437}
   - component: {fileID: 818952436}
+  - component: {fileID: 818952439}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Hitbox_LeftLeg
@@ -1060,7 +1075,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818952434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.231, y: -0.319, z: 0}
+  m_LocalPosition: {x: -0.323, y: -0.319, z: 0}
   m_LocalScale: {x: 0.47851, y: 0.47851, z: 0.47851}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1130,6 +1145,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818952434}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &818952439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818952434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f9a2daf72952b479cb60c588639972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerObject: {fileID: 818952434}
 --- !u!1 &843810586
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,6 +1486,7 @@ GameObject:
   - component: {fileID: 1181003343}
   - component: {fileID: 1181003342}
   - component: {fileID: 1181003341}
+  - component: {fileID: 1181003344}
   m_Layer: 0
   m_Name: Sphere (3)
   m_TagString: Hitbox_Torso
@@ -1543,6 +1572,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181003339}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1181003344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181003339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f9a2daf72952b479cb60c588639972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerObject: {fileID: 1181003339}
 --- !u!1 &1208789268
 GameObject:
   m_ObjectHideFlags: 0
@@ -2586,6 +2628,7 @@ GameObject:
   - component: {fileID: 2066265331}
   - component: {fileID: 2066265330}
   - component: {fileID: 2066265329}
+  - component: {fileID: 2066265332}
   m_Layer: 0
   m_Name: Sphere (2)
   m_TagString: Hitbox_RightForeArm
@@ -2671,6 +2714,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2066265327}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2066265332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066265327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f9a2daf72952b479cb60c588639972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerObject: {fileID: 2066265327}
 --- !u!1001 &2107242877
 PrefabInstance:
   m_ObjectHideFlags: 0

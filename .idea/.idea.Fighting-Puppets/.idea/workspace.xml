@@ -11,6 +11,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/baf221fb3c1b496184bd24cdf8d2cace134c40/f1/ddab544b/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HitboxScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovementController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RifleScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WeaponHolderController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/WeaponGrabbingScript.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -98,6 +99,8 @@
       <workItem from="1668115224907" duration="2071000" />
       <workItem from="1668142132418" duration="4464000" />
       <workItem from="1668195057423" duration="7345000" />
+      <workItem from="1668223342025" duration="230000" />
+      <workItem from="1668223595290" duration="1544000" />
     </task>
     <servers />
   </component>
