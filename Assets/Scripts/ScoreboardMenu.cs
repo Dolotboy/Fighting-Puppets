@@ -20,6 +20,7 @@ public class ScoreboardMenu : MonoBehaviour
     {
         scoreboardTitle.text = LobbyManager.instance.lobbyName;
         playerList = LobbyManager.instance.PlayerListItems;
+        UnpopulateScoreboardMenu();
         PopulateScoreboardMenu();
     }
 
@@ -32,22 +33,6 @@ public class ScoreboardMenu : MonoBehaviour
     void PopulateScoreboardMenu()
     {
         Debug.Log("NOMBRE DE JOUEUR: " + playerList.Count);
-
-        /*for (int i = 0; i < playerList.Count; i++)
-        {
-            Debug.Log("+1 Joueur trouvé: " + playerList[i].playerName);
-
-            GameObject newPlayerListItem = Instantiate(PlayerListItemPrefab) as GameObject;
-            PlayerListItem newPlayerListItemScript = newPlayerListItem.GetComponent<PlayerListItem>();
-
-            newPlayerListItemScript.playerName = playerList[i].playerName;
-            newPlayerListItemScript.ConnectionId = playerList[i].ConnectionId;
-            newPlayerListItemScript.playerSteamId = playerList[i].playerSteamId;
-            newPlayerListItemScript.SetPlayerListItemValues();
-
-            newPlayerListItem.transform.SetParent(ContentPanel.transform);
-            newPlayerListItem.transform.localScale = Vector3.one;
-        }*/
 
         foreach(PlayerListItem player in playerList)
         {
@@ -63,6 +48,14 @@ public class ScoreboardMenu : MonoBehaviour
 
             newPlayerListItem.transform.SetParent(ContentPanel.transform);
             newPlayerListItem.transform.localScale = Vector3.one;
+        }
+    }
+
+    void UnpopulateScoreboardMenu()
+    {
+        while (ContentPanel.transform.childCount > 0)
+        {
+            DestroyImmediate(ContentPanel.transform.GetChild(0).gameObject);
         }
     }
 }
