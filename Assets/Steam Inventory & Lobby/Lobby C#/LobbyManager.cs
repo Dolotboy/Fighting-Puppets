@@ -22,7 +22,7 @@ namespace BrettArnett
         [SerializeField] private GameObject PlayerListItemPrefab;
 
         public bool havePlayerListItemsBeenCreated = false;
-        private List<PlayerListItem> playerListItems = new List<PlayerListItem>();
+        public List<PlayerListItem> playerListItems = new List<PlayerListItem>();
         public List<PlayerListItem> playerList = new List<PlayerListItem>();
         public GameObject localGamePlayerObject;
         public GamePlayer localGamePlayerScript;
