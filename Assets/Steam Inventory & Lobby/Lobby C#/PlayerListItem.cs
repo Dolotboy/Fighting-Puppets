@@ -11,6 +11,9 @@ namespace BrettArnett
     {
         public string playerName;
         public int ConnectionId;
+        public int deathNbr;
+        public int killNbr;
+        public double damageDealt;
         public ulong playerSteamId;
         private bool avatarRetrieved;
 
