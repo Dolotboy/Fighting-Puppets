@@ -8,7 +8,7 @@ public class ScoreboardMenu : MonoBehaviour
 {
     public Text scoreboardTitle;
 
-    public List<PlayerListItem> playerList = LobbyManager.instance.playerListItems;
+    public List<PlayerListItem> playerList = LobbyManager.instance.playerList;
 
     [SerializeField] private GameObject ContentPanel;
     [SerializeField] private GameObject PlayerListItemPrefab;
@@ -30,7 +30,7 @@ public class ScoreboardMenu : MonoBehaviour
 
     void PopulateScoreboardMenu()
     {
-        Debug.Log("NOMBRE DE JOUEUR: " + LobbyManager.instance.playerListItems.Count);
+        Debug.Log("NOMBRE DE JOUEUR: " + LobbyManager.instance.playerList.Count);
 
         foreach(PlayerListItem player in playerList)
         {

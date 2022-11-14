@@ -22,7 +22,8 @@ namespace BrettArnett
         [SerializeField] private GameObject PlayerListItemPrefab;
 
         public bool havePlayerListItemsBeenCreated = false;
-        public List<PlayerListItem> playerListItems = new List<PlayerListItem>();
+        private List<PlayerListItem> playerListItems = new List<PlayerListItem>();
+        public List<PlayerListItem> playerList = new List<PlayerListItem>();
         public GameObject localGamePlayerObject;
         public GamePlayer localGamePlayerScript;
 
@@ -105,6 +106,7 @@ namespace BrettArnett
                 newPlayerListItem.transform.localScale = Vector3.one;
 
                 playerListItems.Add(newPlayerListItemScript);
+                playerList = playerListItems;
             }
             havePlayerListItemsBeenCreated = true;
         }
@@ -130,6 +132,7 @@ namespace BrettArnett
                     newPlayerListItem.transform.localScale = Vector3.one;
 
                     playerListItems.Add(newPlayerListItemScript);
+                    playerList = playerListItems;
                 }
             }
         }
@@ -153,6 +156,7 @@ namespace BrettArnett
                     playerListItems.Remove(playerListItemToRemove);
                     Destroy(playerListItemToRemoveObject);
                     playerListItemToRemoveObject = null;
+                    playerList = playerListItems;
                 }
             }
         }
@@ -182,6 +186,7 @@ namespace BrettArnett
                 playerListItemObject = null;
             }
             playerListItems.Clear();
+            playerList = playerListItems;
         }
 
         public void PlayerQuitLobby()
