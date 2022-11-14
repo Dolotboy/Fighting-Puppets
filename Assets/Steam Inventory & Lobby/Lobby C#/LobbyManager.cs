@@ -22,11 +22,13 @@ namespace BrettArnett
         [SerializeField] private GameObject PlayerListItemPrefab;
 
         public bool havePlayerListItemsBeenCreated = false;
-        private List<PlayerListItem> playerListItems = new List<PlayerListItem>();
+        public List<PlayerListItem> playerListItems = new List<PlayerListItem>();
         public GameObject localGamePlayerObject;
         public GamePlayer localGamePlayerScript;
 
         public ulong currentLobbyId;
+
+        public string lobbyName;
 
 
         private MyNetworkManager game;
@@ -63,7 +65,7 @@ namespace BrettArnett
         {
             Debug.Log("UpdateLobbyName");
             currentLobbyId = Game.GetComponent<SteamLobby>().current_lobbyID;
-            string lobbyName = SteamMatchmaking.GetLobbyData((CSteamID)currentLobbyId, "name");
+            lobbyName = SteamMatchmaking.GetLobbyData((CSteamID)currentLobbyId, "name");
             Debug.Log("UpdateLobbyName: new lobby name will be: " + lobbyName);
             LobbyNameText.text = lobbyName;
 
