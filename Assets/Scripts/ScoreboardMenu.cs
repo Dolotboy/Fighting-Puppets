@@ -8,7 +8,7 @@ public class ScoreboardMenu : MonoBehaviour
 {
     public Text scoreboardTitle;
 
-    public List<PlayerListItem> playerList = LobbyManager.instance.PlayerListItems;
+    public List<PlayerListItem> playerList = new List<PlayerListItem>();
 
     [SerializeField] private GameObject ContentPanel;
     [SerializeField] private GameObject PlayerListItemPrefab;
@@ -16,9 +16,10 @@ public class ScoreboardMenu : MonoBehaviour
     //public List<PlayerListItem> playerList = new List<PlayerListItem>();
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         scoreboardTitle.text = LobbyManager.instance.lobbyName;
+        playerList = LobbyManager.instance.PlayerListItems;
         PopulateScoreboardMenu();
     }
 
