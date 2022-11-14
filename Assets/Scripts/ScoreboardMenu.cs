@@ -8,7 +8,7 @@ public class ScoreboardMenu : MonoBehaviour
 {
     public Text scoreboardTitle;
 
-    public List<PlayerListItem> playerList = LobbyManager.instance.playerList;
+    public List<PlayerListItem> playerList = LobbyManager.instance.PlayerListItems;
 
     [SerializeField] private GameObject ContentPanel;
     [SerializeField] private GameObject PlayerListItemPrefab;
@@ -30,7 +30,23 @@ public class ScoreboardMenu : MonoBehaviour
 
     void PopulateScoreboardMenu()
     {
-        Debug.Log("NOMBRE DE JOUEUR: " + LobbyManager.instance.playerList.Count);
+        Debug.Log("NOMBRE DE JOUEUR: " + playerList.Count);
+
+        /*for (int i = 0; i < playerList.Count; i++)
+        {
+            Debug.Log("+1 Joueur trouvé: " + playerList[i].playerName);
+
+            GameObject newPlayerListItem = Instantiate(PlayerListItemPrefab) as GameObject;
+            PlayerListItem newPlayerListItemScript = newPlayerListItem.GetComponent<PlayerListItem>();
+
+            newPlayerListItemScript.playerName = playerList[i].playerName;
+            newPlayerListItemScript.ConnectionId = playerList[i].ConnectionId;
+            newPlayerListItemScript.playerSteamId = playerList[i].playerSteamId;
+            newPlayerListItemScript.SetPlayerListItemValues();
+
+            newPlayerListItem.transform.SetParent(ContentPanel.transform);
+            newPlayerListItem.transform.localScale = Vector3.one;
+        }*/
 
         foreach(PlayerListItem player in playerList)
         {
@@ -46,11 +62,6 @@ public class ScoreboardMenu : MonoBehaviour
 
             newPlayerListItem.transform.SetParent(ContentPanel.transform);
             newPlayerListItem.transform.localScale = Vector3.one;
-
-            /*
-            Text playerName = Instantiate(scoreboardTitle, ContentPanel.transform);
-            playerName.text = player.playerName;
-            */
         }
     }
 }
