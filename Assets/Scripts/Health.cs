@@ -63,10 +63,6 @@ public class Health : NetworkBehaviour
         {
             return;
         }
-        if (healthPoint <= 0)
-        {
-            CmdDeath();
-        }
 
         if (armorPoint > 0)
         {
@@ -81,6 +77,11 @@ public class Health : NetworkBehaviour
         else
         {
             decreaseHealthPoint(damage);
+        }
+
+        if (healthPoint <= 0)
+        {
+            CmdDeath();
         }
     }
 
