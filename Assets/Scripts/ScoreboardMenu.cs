@@ -53,9 +53,9 @@ public class ScoreboardMenu : MonoBehaviour
 
     void UnpopulateScoreboardMenu()
     {
-        while (ContentPanel.transform.childCount > 0)
+        for (int i = 0; i < ContentPanel.transform.childCount; i++)
         {
-            DestroyImmediate(ContentPanel.transform.GetChild(0).gameObject);
+            Destroy(ContentPanel.transform.GetChild(i).gameObject);
         }
     }
 }
