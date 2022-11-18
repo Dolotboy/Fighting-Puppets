@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Mirror;
 using Steamworks;
+using UnityEngine.SceneManagement;
 
 namespace BrettArnett
 {
@@ -17,6 +19,12 @@ namespace BrettArnett
         public ulong playerSteamId;
         private bool avatarRetrieved;
 
+        private bool bUIStatsEnabled = false;
+
+        [SerializeField] private Text killTxt;
+        [SerializeField] private Text deathTxt;
+        [SerializeField] private Text scoreTxt;
+
         [SerializeField] private Text PlayerNameText;
         [SerializeField] private RawImage playerAvatar;
 
@@ -25,14 +33,39 @@ namespace BrettArnett
         void Start()
         {
             avatarImageLoaded = Callback<AvatarImageLoaded_t>.Create(OnAvatarImageLoaded);
+            
         }
 
         public void SetPlayerListItemValues()
         {
             PlayerNameText.text = playerName;
+            
+            if (SceneManager.GetActiveScene().name != "Scene_Lobby" && SceneManager.GetActiveScene().name != "Scene_Steamworks")
+            {
+                EnableUIStats();
+                bUIStatsEnabled = true;
+            }
+            
+            if(bUIStatsEnabled) UpdateUIStats();
+            
             if (!avatarRetrieved)
                 GetPlayerAvatar();
         }
+
+        private void UpdateUIStats()
+        {
+            killTxt.text = killNbr.ToString();
+            deathTxt.text = deathNbr.ToString();
+            scoreTxt.text = Convert.ToString(damageDealt);
+        }
+
+        private void EnableUIStats()
+        {
+            killTxt.enabled = true;
+            deathTxt.enabled = true;
+            scoreTxt.enabled = true;
+        }
+        
         void GetPlayerAvatar()
         {
             int imageId = SteamFriends.GetLargeFriendAvatar((CSteamID)playerSteamId);
